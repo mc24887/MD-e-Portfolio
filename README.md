@@ -39,3 +39,6 @@ Explore how I applied theoretical knowledge to real-world challenges, collaborat
 | ---------------------- | ------------------- | ------------------- | ---------------------------- |
 | Threat Modelling       | Intermediate        | Advanced            | Explore MITRE ATT&CK         |
 | Quantitative Modelling | Beginner            | Intermediate        | Formal certification planned |
+
+## Final Thoughts
+Visit my completed e-portfolio for more details: [E-Portfolio](https://mc24887.github.io/mc24887-Reflective-Piece-for-E-Portfolio/).
