@@ -16,4 +16,4 @@ Welcome to my Security and Risk Management E-Portfolio. This repository document
 - **References**: Harvard-style references used across the e-portfolio.
 
 ## View Online
-Access my e-portfolio: [GitHub Pages](https://username.github.io/Security-and-Risk-Management-E-Portfolio)
+Access my e-portfolio: [GitHub Pages]( https://mc24887.github.io/mc24887-Reflective-Piece-for-E-Portfolio/)
