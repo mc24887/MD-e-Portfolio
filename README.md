@@ -1,3 +1,45 @@
+mc24887-Reflective-Piece-for-E-Portfolio/
+├── README.md
+├── Unit1-Threat-Modelling/
+│   ├── STRIDE-DREAD-Analysis.md
+│   ├── Threat-Modelling-Exercise.pptx
+├── Unit2-Risk-Identification/
+│   ├── RISK-IDENTIFICATION-REPORT-PamperedPets.docx
+│   ├── Risk-Assessment-Notes.md
+├── Unit3-Discussion-Activity/
+│   ├── Initial-Post.md
+│   ├── Peer-Response1.md
+│   ├── Peer-Response2.md
+│   ├── Summary-Post.md
+├── Unit5-Security-and-Risk-Standards/
+│   ├── GDPR-Case-Study.md
+│   ├── Case-Study-Solutions.md
+├── Unit6-Disaster-Recovery/
+│   ├── Executive-Summary_Risk-Assessment-and-DR.docx
+│   ├── DR-Planning-and-Testing.md
+├── Unit8-Quantitative-Risk-Modelling/
+│   ├── Monte-Carlo-Simulations.md
+│   ├── QRM-Case-Study.md
+├── Unit10-Practical-DR-Applications/
+│   ├── RTO-and-RPO-Designs.md
+│   ├── DR-Solutions-Review.md
+├── Unit12-Future-Trends/
+│   ├── Emerging-SRM-Trends.md
+│   ├── Team-Debate-Summary.md
+├── Reflection-and-Peer-Evaluation/
+│   ├── Reflective-Piece-for-E-Portfolio-Submission.docx
+│   ├── Peer_Evaluation_Milad-Chowdhury_GroupA.docx
+├── GroupWork/
+│   ├── Team-Contract-Group-A.docx
+│   ├── Team-Dynamics-Insights.md
+├── Visuals/
+│   ├── Risk-Graphs.png
+│   ├── Skill-Matrix.png
+├── References/
+│   ├── Harvard-Style-References.md
+
+
+
 # Security and Risk Management E-Portfolio
 
 Welcome to my Security and Risk Management E-Portfolio. This repository showcases my academic and professional growth throughout the module. Each section corresponds to a specific unit, detailing practical activities, critical reflections, and key deliverables.
