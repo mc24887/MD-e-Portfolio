@@ -1,165 +1,126 @@
 # Security and Risk Management E-Portfolio
 
-Welcome to my Security and Risk Management E-Portfolio. This repository showcases my academic and professional growth throughout the module. Each section corresponds to a specific unit, detailing practical activities, critical reflections, and key deliverables.
+# E-Portfolio: Security and Risk Management
 
-Explore how I applied theoretical knowledge to real-world challenges, collaborated with peers, and developed essential skills in risk assessment, disaster recovery, and threat modelling.
+## Introduction
+Welcome to my e-portfolio for the Security and Risk Management module. This portfolio showcases my learning journey, including reflective pieces, seminar insights, group projects, and final reports. The goal of this portfolio is to highlight my skills, growth, and achievements throughout the module.
 
+![Introduction Graphic](introduction_graphic.png)
 
+## Reflective Piece
+### Reflective Study
+This section contains my reflective study based on Gibbs' Reflective Cycle, skill matrices, and certifications planned. It includes critical analysis of experiences and highlights areas for improvement such as time management and communication skills. The iterative process of applying theoretical frameworks such as STRIDE and Monte Carlo simulations improved my understanding of risk assessment.
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Portfolio | Security and Risk Management</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        nav {
-            text-align: center;
-            background: #f4f4f4;
-            padding: 1rem;
-        }
-        nav a {
-            margin: 0 1rem;
-            text-decoration: none;
-            color: #333;
-        }
-        nav a:hover {
-            color: #007BFF;
-        }
-        section {
-            padding: 2rem;
-        }
-        h2 {
-            color: #333;
-        }
-        .card {
-            background: #f9f9f9;
-            margin: 1rem 0;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #333;
-            color: #fff;
-        }
-        .file-link {
-            color: #007BFF;
-            text-decoration: none;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 1rem auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 0.5rem;
-            text-align: left;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>E-Portfolio: Security and Risk Management</h1>
-        <p>Milad Chowdhury</p>
-    </header>
+#### Skills and Certifications Plan
+| Certification            | Purpose                                 | Timeline  |
+| ------------------------ | --------------------------------------- | --------- |
+| CISSP                    | Deepen cybersecurity expertise          | 12 months |
+| CRISC                    | Strengthen enterprise risk management   | 18 months |
+| ISO 31000 Certification  | Gain advanced risk management knowledge | 12 months |
+| Agile Project Management | Improve project handling efficiency     | 9 months  |
 
-    <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#reflective-piece">Reflective Piece</a>
-        <a href="#seminars">Seminars</a>
-        <a href="#projects">Projects</a>
-        <a href="#references">References</a>
-    </nav>
-    
-    <section id="introduction">
-        <h2>Introduction</h2>
-        <p>Welcome to my e-portfolio for the Security and Risk Management module. This portfolio showcases my learning journey, including reflective pieces, seminar insights, group projects, and final reports. The goal of this portfolio is to highlight my skills, growth, and achievements throughout the module.</p>
-    </section>
-    
-    <section id="reflective-piece">
-        <h2>Reflective Piece</h2>
-        <div class="card">
-            <h3>Reflective Study</h3>
-            <p>This section contains my reflective study based on Gibbs' Reflective Cycle, skill matrices, and certifications planned.</p>
-            <a href="Reflective_Piece_for_E-Portfolio_Submission.docx" class="file-link" target="_blank">Download Reflective Study</a>
-        </div>
-    </section>
-    
-    <section id="seminars">
-        <h2>Seminars and Key Learnings</h2>
-        <div class="card">
-            <h3>Unit 1: Introductory Seminar</h3>
-            <p>Overview of module structure, assessments, and team project guidelines. Focused on establishing a collaborative learning environment and clarifying expectations for the course.</p>
-        </div>
-        <div class="card">
-            <h3>Unit 10: DR Solutions Design</h3>
-            <p>Explored vendor lock-in issues and mitigation strategies, alongside designing high-level disaster recovery solutions tailored to varying RPO and RTO requirements.</p>
-            <a href="e-portfolio-Disaster_Recovery_Solutions_Seminar.docx" class="file-link" target="_blank">Download Seminar Report</a>
-        </div>
-        <div class="card">
-            <h3>Unit 12: The Great Debate</h3>
-            <p>Debated the most influential trends in Security and Risk Management for the next five years, focusing on AI, machine learning, and DevSecOps. The session involved presenting arguments and supporting evidence for peer review.</p>
-            <a href="The_Great_Debate-SRM.docx" class="file-link" target="_blank">Download Debate Summary</a>
-        </div>
-        <div class="card">
-            <h3>GDPR Case Studies</h3>
-            <p>Reviewed impactful GDPR case studies highlighting data privacy challenges and regulatory compliance strategies. Detailed analyses are integrated into seminar learnings.</p>
-            <img src="gdpr_case_study.png" alt="GDPR Case Study Visual">
-        </div>
-    </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="card">
-            <h3>Risk Identification Report: Pampered Pets</h3>
-            <p>A comprehensive assessment of risks and mitigations for Pampered Pets' digitisation process. This report analysed threats using the STRIDE framework and proposed practical solutions for improving security and operational resilience.</p>
-            <a href="RISK_IDENTIFICATION_REPORT_PamperedPets_With_TOC.docx" class="file-link" target="_blank">Download Risk Report</a>
-        </div>
-        <div class="card">
-            <h3>Threat Modelling Exercise</h3>
-            <p>Analysed threats for a large UK bank using STRIDE and DREAD frameworks, incorporating tools like Microsoft Defender, Rapid7, and Vectra AI for mitigation. Recommendations included multi-factor authentication and real-time threat detection.</p>
-            <a href="Threat_Modelling_Exercise_Bank.pptx" class="file-link" target="_blank">Download Threat Modelling Presentation</a>
-            <img src="threat_modelling_diagram.png" alt="Threat Modelling Diagram">
-        </div>
-        <div class="card">
-            <h3>Team Contract and Peer Evaluations</h3>
-            <p>Included team agreements and performance evaluations highlighting collaboration, communication, and accountability in group projects.</p>
-            <a href="Team_Contract_Group_A.docx" class="file-link" target="_blank">Download Team Contract</a>
-            <a href="Peer_Evaluation_Milad_Chowdhury_GroupA.docx" class="file-link" target="_blank">Download Peer Evaluation</a>
-        </div>
-    </section>
-    
-    <section id="references">
-        <h2>References</h2>
-        <p>A full list of references used throughout the module, formatted in Harvard style, is available in the <a href="Reflective_Piece_for_E-Portfolio_Submission.docx" class="file-link" target="_blank">Reflective Study</a>.</p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Milad Chowdhury | Security and Risk Management</p>
-    </footer>
-</body>
-</html>
+![Skills and Certifications Chart](skills_certifications_chart.png)
+
+## Seminars and Key Learnings
+### Unit 1: Introductory Seminar
+- Covered module structure and assessments.
+- Discussed team project roles and collaborative working expectations.
+
+### Unit 2: Risk Management Process
+- Analysed differences between qualitative and quantitative risk assessments.
+- Evaluated the importance of user involvement in risk management decisions.
+
+### Unit 3: Threat Modelling Introduction
+- Explored distinctions between threats and vulnerabilities.
+- Reviewed popular threat modelling techniques like STRIDE, DREAD, and Attack Trees.
+
+### Unit 4: Threat Modelling Exercises
+- Created threat models for diverse scenarios (e.g., airports, banks) using STRIDE and DREAD.
+- Integrated ATT&CK libraries and OWASP Threat Modelling Cookbook.
+- Example from the UK Bank Scenario:
+  - **Threat Identified**: Malware attack on internal banking systems.
+  - **Mitigation Tools**: Multi-factor authentication, Vectra AI for behavioural analysis, Rapid7 for vulnerability scanning.
+
+![Threat Modelling Diagram](threat_modelling_diagram.png)
+
+### Unit 5: Security Standards in Industry
+- Examined industry-specific standards like GDPR, PCI-DSS, and HIPAA.
+- Evaluated frameworks for assessing organisational compliance and mitigating risks.
+
+### Unit 6: Practical Implications of Standards
+- Reviewed GDPR-related case studies, focusing on breaches and resolutions.
+- Example:
+  - **Issue**: Lack of encryption in customer communication.
+  - **Solution**: Implemented end-to-end encryption and employee training.
+
+![GDPR Case Study Visual](gdpr_case_study.png)
+
+### Unit 7: Quantitative Risk Modelling
+- Discussed methods like Monte Carlo simulations and Bayes Theorem.
+- Evaluated multi-criteria decision-making tools such as TOPSIS and AHP.
+
+### Unit 8: Implementing Quantitative Models
+- Developed quantitative models for real-world scenarios.
+- Example:
+  - **Scenario**: Simulated disaster recovery scenarios for a critical IT system.
+  - **Outcome**: Provided actionable insights for business continuity planning.
+
+### Unit 9: Risk, Business Continuity, and DR
+- Reviewed frameworks for Business Impact Assessments (BIA), RPO, and RTO.
+- Proposed recovery solutions tailored to organisational needs.
+
+### Unit 10: DR Solutions Design
+- Investigated cloud vendor lock-in issues and proposed multi-cloud strategies.
+- Designed disaster recovery solutions for varying RPO/RTO metrics:
+  1. **High Availability**: Active-active architecture with real-time failover.
+  2. **Cost-Effective**: Warm standby architecture with asynchronous replication.
+
+### Unit 11: Future Trends in SRM
+- Analysed emerging trends such as AI, DevSecOps, and automation.
+- Example:
+  - **Trend**: Trustworthy AI systems.
+  - **Impact**: Enhanced decision-making and threat-detection capabilities.
+
+### Unit 12: The Great Debate
+- Debated the most influential Security and Risk Management trends for the next five years, focusing on AI, machine learning, and DevSecOps. The session involved presenting arguments and supporting evidence for peer review.
+
+## Projects
+### Risk Identification Report: Pampered Pets
+- Conducted a thorough risk assessment using STRIDE and NIST frameworks.
+- Proposed e-commerce solutions to enhance market reach and security.
+
+| Threat Type       | Description       | Mitigation                      |
+| ----------------- | ----------------- | ------------------------------- |
+| Spoofing          | Credential theft  | Multi-factor authentication     |
+| Tampering         | Data manipulation | Content Security Policies (CSP) |
+| Denial of Service | System overload   | DDoS Protection Services        |
+
+![Risk Identification Report Graphic](risk_identification_graphic.png)
+
+### Threat Modelling Exercise
+- Applied STRIDE and DREAD for threat analysis in critical infrastructure.
+- Example from banking scenario:
+  - **Spoofing**: Mitigated through advanced identity protection.
+  - **Information Disclosure**: Prevented by encrypting sensitive data.
+
+![Threat Modelling Exercise Graphic](threat_modelling_exercise_graphic.png)
+
+### Team Contract and Peer Evaluations
+- Collaboratively outlined goals for group projects.
+- Highlights:
+  - Equal participation, fostering accountability.
+  - Focused on clear communication and timely deliverables.
+
+![Team Collaboration Visual](team_collaboration.png)
+
+## References
+### Academic References
+- Gibbs, G. (1988). *Learning by Doing: A Guide to Teaching and Learning Methods*. Oxford: Oxford Polytechnic.
+- Kolb, D. A. (1984). *Experiential Learning: Experience as the Source of Learning and Development*. Englewood Cliffs, NJ: Prentice Hall.
+- Shostack, A. (2018). *Threat Modelling: Designing for Security*. New York: Wiley.
+- ENISA (2022). *Cybersecurity Risk Trends in Supply Chains*. [Online]. Available at: [https://www.enisa.europa.eu](https://www.enisa.europa.eu).
+- Opara-Martins, J., Sahandi, R., & Tian, F. (2014). *Critical Review of Vendor Lock-In and Its Impact on Adoption of Cloud Computing*. IEEE.
+- Stoneburner, G., Goguen, A., & Feringa, A. (2002). *Risk Management Guide for Information Technology Systems*. NIST Special Publication 800-30.
+
+---
+&copy; 2025 Milad Chowdhury | Security and Risk Management
