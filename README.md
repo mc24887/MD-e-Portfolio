@@ -80,14 +80,12 @@ Applying STRIDE reveals the following threats to the current business operations
 
 ### Unit 9: Risk, Business Continuity, and DR
 - Reviewed frameworks for Business Impact Assessments (BIA), RPO, and RTO.
-- Proposed recovery solutions tailored to organisational needs.
-- **Table**:
-| Metric       | Example Value | Recovery Solution             |
-| ------------ | ------------- | ----------------------------- |
-| RPO          | 15 mins       | Real-time replication         |
-| RTO          | 1 hour        | Automated failover systems    |
-| Backup Cycle | Hourly        | Cloud storage with redundancy |
 
+- Proposed recovery solutions tailored to organisational needs.
+
+- **Table**:
+
+  ![image-20250124203251996](C:\Users\mur_c\AppData\Roaming\Typora\typora-user-images\image-20250124203251996.png)
 ### Unit 10: DR Solutions Design
 - Investigated cloud vendor lock-in issues and proposed multi-cloud strategies.
 
