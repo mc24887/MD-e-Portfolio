@@ -21,9 +21,9 @@ This section contains my reflective study based on Gibbs' Reflective Cycle, skil
 
 | **Certification/Training**                                   | **Purpose**                                                | **Timeline**     |
 | ------------------------------------------------------------ | ---------------------------------------------------------- | ---------------- |
-| CISSP (Certified Information Systems Security  Professional) | Deepen expertise in cybersecurity and risk  management.    | Within 12 months |
+| CISSP (Certified Information Systems Security  Professional) | Deepen cybersecurity and risk management expertise.    | Within 12 months |
 | CRISC (Certified in Risk and Information Systems  Control)   | Enhance skills in enterprise risk management.              | Within 18 months |
-| ISO 31000 Risk Management Certification                      | Strengthen knowledge of global risk management  standards. | Within 12 months |
+| ISO 31000 Risk Management Certification                      | Strengthen global risk management standards knowledge. | Within 12 months |
 | Agile Project Management Training                            | Improve efficiency in managing security projects.          | Within 9 months  |
 
 
