@@ -10,14 +10,26 @@ Welcome to my e-portfolio for the Security and Risk Management module. This port
 This section contains my reflective study based on Gibbs' Reflective Cycle, skill matrices, and planned certifications. It includes a critical analysis of experiences and highlights areas for improvement, such as time management and communication skills. The iterative process of applying theoretical frameworks such as STRIDE and Monte Carlo simulations improved my understanding of risk assessment.
 
 #### Skills and Certifications Plan
-| Certification            | Purpose                                 | Timeline  |
-| ------------------------ | --------------------------------------- | --------- |
-| CISSP                    | Deepen cybersecurity expertise          | 12 months |
-| CRISC                    | Strengthen enterprise risk management   | 18 months |
-| ISO 31000 Certification  | Gain advanced risk management knowledge | 12 months |
-| Agile Project Management | Improve project handling efficiency     | 9 months  |
+
+| **Skill**             | **Initial Proficiency** | **Current Proficiency** | **Development Plan**                  |
+| --------------------- | ----------------------- | ----------------------- | ------------------------------------- |
+| Threat Modelling      | Intermediate            | Advanced                | Deepen use of MITRE ATT&CK            |
+| Risk Assessment       | Beginner                | Intermediate            | Pursue formal certifications          |
+| Communication         | Intermediate            | Advanced                | Practice scenario-based communication |
+| Technical Proficiency | Intermediate            | Advanced                | Gain expertise in advanced frameworks |
+| Time Management       | Intermediate            | Intermediate            | Use project management tools          |
+
+| **Certification/Training**                                   | **Purpose**                                                | **Timeline**     |
+| ------------------------------------------------------------ | ---------------------------------------------------------- | ---------------- |
+| CISSP (Certified Information Systems Security  Professional) | Deepen expertise in cybersecurity and risk  management.    | Within 12 months |
+| CRISC (Certified in Risk and Information Systems  Control)   | Enhance skills in enterprise risk management.              | Within 18 months |
+| ISO 31000 Risk Management Certification                      | Strengthen knowledge of global risk management  standards. | Within 12 months |
+| Agile Project Management Training                            | Improve efficiency in managing security projects.          | Within 9 months  |
+
+
 
 ## Seminars and Key Learnings
+
 ### Unit 1: Introductory Seminar
 - Covered module structure and assessments.
 - Discussed team project roles and collaborative working expectations.
