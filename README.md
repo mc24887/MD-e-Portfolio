@@ -61,8 +61,6 @@ Applying STRIDE reveals the following threats to the current business operations
   - **Issue**: Lack of encryption in customer communication.
   - **Solution**: Implemented end-to-end encryption and employee training.
 
-
-
 ### Unit 7: Quantitative Risk Modelling
 - Discussed methods like Monte Carlo simulations and Bayes Theorem.
 - Evaluated multi-criteria decision-making tools such as TOPSIS and AHP.
@@ -80,12 +78,7 @@ Applying STRIDE reveals the following threats to the current business operations
 
 ### Unit 9: Risk, Business Continuity, and DR
 - Reviewed frameworks for Business Impact Assessments (BIA), RPO, and RTO.
-
 - Proposed recovery solutions tailored to organisational needs.
-
-- **Table**:
-
-  ![image-20250124203251996](C:\Users\mur_c\AppData\Roaming\Typora\typora-user-images\image-20250124203251996.png)
 ### Unit 10: DR Solutions Design
 - Investigated cloud vendor lock-in issues and proposed multi-cloud strategies.
 
@@ -93,7 +86,6 @@ Applying STRIDE reveals the following threats to the current business operations
   1. **High Availability**: Active-active architecture with real-time failover.
   2. **Cost-Effective**: Warm standby architecture with asynchronous replication.
   
-  ![image-20250124201738434](C:\Users\MC\AppData\Roaming\Typora\typora-user-images\image-20250124201738434.png)
 
 ### Unit 11: Future Trends in SRM
 - Analysed emerging trends such as AI, DevSecOps, and automation.
@@ -173,16 +165,6 @@ Applying STRIDE reveals the following threats to the current business operations
 - Example from banking scenario:
   - **Spoofing**: Mitigated through advanced identity protection.
   - **Information Disclosure**: Prevented by encrypting sensitive data.
-
-![image-20250124202501634](C:\Users\MC\AppData\Roaming\Typora\typora-user-images\image-20250124202501634.png)
-
-![image-20250124202538291](C:\Users\MC\AppData\Roaming\Typora\typora-user-images\image-20250124202538291.png)
-
-![image-20250124202620660](C:\Users\MC\AppData\Roaming\Typora\typora-user-images\image-20250124202620660.png)
-
-![image-20250124202639153](C:\Users\MC\AppData\Roaming\Typora\typora-user-images\image-20250124202639153.png)
-
-![image-20250124202703887](C:\Users\MC\AppData\Roaming\Typora\typora-user-images\image-20250124202703887.png)
 
 ### Team Contract and Peer Evaluations
 
