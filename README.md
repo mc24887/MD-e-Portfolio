@@ -3,7 +3,7 @@
 ## Introduction
 Welcome to my e-portfolio for the Security and Risk Management module. This portfolio showcases my learning journey, including reflective pieces, seminar insights, group projects, and final reports. Its goal is to highlight my skills, growth, and achievements throughout the module.
 
-![Introduction Graphic](introduction_graphic.png)
+
 
 ## Reflective Piece
 ### Reflective Study
@@ -16,8 +16,6 @@ This section contains my reflective study based on Gibbs' Reflective Cycle, skil
 | CRISC                    | Strengthen enterprise risk management   | 18 months |
 | ISO 31000 Certification  | Gain advanced risk management knowledge | 12 months |
 | Agile Project Management | Improve project handling efficiency     | 9 months  |
-
-![Skills and Certifications Chart](skills_certifications_chart.png)
 
 ## Seminars and Key Learnings
 ### Unit 1: Introductory Seminar
@@ -39,7 +37,16 @@ This section contains my reflective study based on Gibbs' Reflective Cycle, skil
   - **Threat Identified**: Malware attack on internal banking systems.
   - **Mitigation Tools**: Multi-factor authentication, Vectra AI for behavioural analysis, Rapid7 for vulnerability scanning.
 
-![Threat Modelling Diagram](threat_modelling_diagram.png)
+Applying STRIDE reveals the following threats to the current business operations:
+
+| **Threat Type**             | **Description**                                    | **Impact**                                                   | **Mitigation**                                               |
+| --------------------------- | -------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Spoofing**                | Unauthorized  access to unsecured Wi-Fi network    | Data  breaches, unauthorized access to sensitive information | 1. Implement WPA3 encryption.   2.  Use strong, unique passwords for network access.   3. Enable MAC address filtering to restrict access to authorized devices. |
+| **Tampering**               | Manipulation  of inventory spreadsheets            | Inaccurate inventory data, financial discrepancies           | 1.  Establish role-based access controls (RBAC) to limit who can modify data.   2. Implement version control to track and audit changes in spreadsheets. |
+| **Repudiation**             | Lack  of transaction logs allows denial of actions | Difficulty  in auditing, resolving disputes                  | 1.  Implement secure, tamper-evident transaction logging (Kent & Souppaya,  2006).   2. Use digital signatures to verify the integrity of transactions. |
+| **Information  Disclosure** | Unencrypted  emails expose customer data           | Loss of  customer trust, potential legal liabilities         | 1. Use  end-to-end encrypted email services.   2. Establish a data classification policy to ensure sensitive information is  always protected. |
+| **Denial  of Service**      | System  failures due to outdated hardware          | Operational  downtime, loss of sales                         | 1.  Upgrade outdated systems to meet current performance standards (Microsoft,  2018).   2. Implement redundancy in hardware to minimize the impact of failures. |
+| **Elevation  of Privilege** | Staff  access sensitive data without controls      | Unauthorized  changes, potential insider threats             | 1.  Implement multi-factor authentication (MFA) for sensitive data access.   2. Enforce principle of least privilege (POLP) to minimize unnecessary access  rights. |
 
 ### Unit 5: Security Standards in Industry
 - Examined industry-specific standards like GDPR, PCI-DSS, and HIPAA.
@@ -54,7 +61,7 @@ This section contains my reflective study based on Gibbs' Reflective Cycle, skil
   - **Issue**: Lack of encryption in customer communication.
   - **Solution**: Implemented end-to-end encryption and employee training.
 
-![GDPR Case Study Visual](gdpr_case_study.png)
+
 
 ### Unit 7: Quantitative Risk Modelling
 - Discussed methods like Monte Carlo simulations and Bayes Theorem.
@@ -83,24 +90,74 @@ This section contains my reflective study based on Gibbs' Reflective Cycle, skil
 
 ### Unit 10: DR Solutions Design
 - Investigated cloud vendor lock-in issues and proposed multi-cloud strategies.
+
 - Designed disaster recovery solutions for varying RPO/RTO metrics:
   1. **High Availability**: Active-active architecture with real-time failover.
   2. **Cost-Effective**: Warm standby architecture with asynchronous replication.
-- **Diagram**:
-  - [Insert DR Solutions Visual Here]
+  
+  ![image-20250124201738434](C:\Users\MC\AppData\Roaming\Typora\typora-user-images\image-20250124201738434.png)
 
 ### Unit 11: Future Trends in SRM
 - Analysed emerging trends such as AI, DevSecOps, and automation.
 - Example:
   - **Trend**: Trustworthy AI systems.
-  - **Impact**: Enhanced decision-making and threat-detection capabilities.
+  - **Impact**: Enhanced decision-making and threat detection capabilities.
 - **Reference Analysis**:
   - AI bias mitigation was discussed using frameworks like FairML.
 
 ### Unit 12: The Great Debate
-- Debated the most influential Security and Risk Management trends for the next five years, focusing on AI, machine learning, and DevSecOps. The session involved presenting arguments and supporting evidence for peer review.
-- **Outcome**:
-  - DevSecOps integration was voted the most impactful due to its agility and continuous security enforcement.
+- **Key Trends with Personal Perspective**
+
+  **1. Trustworthy AI**
+
+  - **Relevance**:
+    - Trustworthy AI systems      will redefine risk detection and decision-making by enhancing robustness,      fairness, and accountability.
+    - Key challenges include      poisoning attacks, model theft, and the need for ethical AI frameworks.
+  - **Critical Analysis**:
+    - While AI improves      efficiency, its adoption raises ethical concerns such as algorithmic bias      and accountability.
+    - Organisations must      invest in explainable AI to address transparency issues.
+
+  **2. Machine Learning for Security**
+
+  - **Impact**:
+    - Predictive analytics      enabled by machine learning will proactively mitigate risks.
+    - Real-time anomaly      detection will strengthen defences against advanced cyber threats.
+  - **Critical Analysis**:
+    - Machine learning      models require extensive training data, which may not always be      available.
+    - There’s a risk of      over-reliance on automated systems without adequate human oversight.
+
+  **3. DevSecOps Integration**
+
+  - **Relevance**:
+    - Combining security      with development and operations ensures vulnerabilities are addressed      early in the development lifecycle.
+  - **Critical Analysis**:
+    - Agile security methods      like DevSecOps reduce delays but demand a cultural shift and significant      training.
+    - Balancing speed with      thorough security checks remains a challenge.
+
+  **4. Risk Modelling Techniques**
+
+  - **Relevance**:
+    - Advanced risk      modelling methods like Monte Carlo simulations provide better insights      into risk probabilities and impacts.
+
+  | **Risk Factor**        | **Probability (%)** | **Impact on Quality (%)** | **Impact on Supply Chain  (%)** |
+  | ---------------------- | ------------------- | ------------------------- | ------------------------------- |
+  | Supply Chain Delays    | 20                  | Moderate (15-25)          | High (30-35)                    |
+  | Quality Control Issues | 15                  | High (25-35)              | Low (5-10)                      |
+  | Cybersecurity Breaches | 10                  | Moderate (10-15)          | Moderate (15-20)                |
+
+   
+
+  - **Critical Analysis**:
+    - Quantitative models      provide actionable insights but may oversimplify complex, interconnected      risks.
+    - Effective implementation      requires cross-departmental collaboration and access to reliable data.
+
+  **5. Enterprise Risk Management (ERM)**
+
+  - **Relevance**:
+    - Aligning ERM with      business goals creates value while addressing diverse risks.
+  - **Critical Analysis**:
+    - ERM frameworks enhance      strategic decision-making but require substantial resources for      implementation.
+    - Industry-specific      risks need tailored approaches rather than generic frameworks.
 
 ## Projects
 ### Risk Identification Report: Pampered Pets
@@ -113,23 +170,28 @@ This section contains my reflective study based on Gibbs' Reflective Cycle, skil
 | Tampering         | Data manipulation | Content Security Policies (CSP) |
 | Denial of Service | System overload   | DDoS Protection Services        |
 
-![Risk Identification Report Graphic](risk_identification_graphic.png)
-
 ### Threat Modelling Exercise
 - Applied STRIDE and DREAD for threat analysis in critical infrastructure.
-- Example from a banking scenario:
+- Example from banking scenario:
   - **Spoofing**: Mitigated through advanced identity protection.
   - **Information Disclosure**: Prevented by encrypting sensitive data.
 
-![Threat Modelling Exercise Graphic](threat_modelling_exercise_graphic.png)
+![image-20250124202501634](C:\Users\MC\AppData\Roaming\Typora\typora-user-images\image-20250124202501634.png)
+
+![image-20250124202538291](C:\Users\MC\AppData\Roaming\Typora\typora-user-images\image-20250124202538291.png)
+
+![image-20250124202620660](C:\Users\MC\AppData\Roaming\Typora\typora-user-images\image-20250124202620660.png)
+
+![image-20250124202639153](C:\Users\MC\AppData\Roaming\Typora\typora-user-images\image-20250124202639153.png)
+
+![image-20250124202703887](C:\Users\MC\AppData\Roaming\Typora\typora-user-images\image-20250124202703887.png)
 
 ### Team Contract and Peer Evaluations
+
 - Collaboratively outlined goals for group projects.
 - Highlights:
   - Equal participation, fostering accountability.
   - Focused on clear communication and timely deliverables.
-
-![Team Collaboration Visual](team_collaboration.png)
 
 ## References
 ### Academic References
