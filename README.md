@@ -1,9 +1,7 @@
-# E-Portfolio: Security and Risk Management
+# Security and Risk Management
 
 ## Introduction
 Welcome to my e-portfolio for the Security and Risk Management module. This portfolio showcases my learning journey, including reflective pieces, seminar insights, group projects, and final reports. Its goal is to highlight my skills, growth, and achievements throughout the module.
-
-
 
 ## Reflective Piece
 ### Reflective Study
@@ -11,22 +9,9 @@ This section contains my reflective study based on Gibbs' Reflective Cycle, skil
 
 #### Skills and Certifications Plan
 
-| **Skill**             | **Initial Proficiency** | **Current Proficiency** | **Development Plan**                  |
-| --------------------- | ----------------------- | ----------------------- | ------------------------------------- |
-| Threat Modelling      | Intermediate            | Advanced                | Deepen use of MITRE ATT&CK            |
-| Risk Assessment       | Beginner                | Intermediate            | Pursue formal certifications          |
-| Communication         | Intermediate            | Advanced                | Practice scenario-based communication |
-| Technical Proficiency | Intermediate            | Advanced                | Gain expertise in advanced frameworks |
-| Time Management       | Intermediate            | Intermediate            | Use project management tools          |
-
-| **Certification/Training**                                   | **Purpose**                                                | **Timeline**     |
-| ------------------------------------------------------------ | ---------------------------------------------------------- | ---------------- |
-| CISSP (Certified Information Systems Security  Professional) | Deepen expertise in cybersecurity and risk  management.    | Within 12 months |
-| CRISC (Certified in Risk and Information Systems  Control)   | Enhance skills in enterprise risk management.              | Within 18 months |
-| ISO 31000 Risk Management Certification                      | Strengthen knowledge of global risk management  standards. | Within 12 months |
-| Agile Project Management Training                            | Improve efficiency in managing security projects.          | Within 9 months  |
-
-
+- **Certifications**: Obtain CISSP and CRISC within the next 18 months.
+- **Skills Development**: Focus on stakeholder engagement through scenario-based workshops.
+- **Advanced Techniques**: Explore frameworks like MITRE ATT&CK to refine threat modelling capabilities.
 
 ## Seminars and Key Learnings
 
@@ -196,4 +181,4 @@ Applying STRIDE reveals the following threats to the current business operations
 - Trott, J. (2019). *Emerging Attacks on AI Systems*. International Journal of Cybersecurity, 12(4), pp. 56-72.
 
 ---
-&copy; 2025 Milad Chowdhury | Security and Risk Management
+&copy; 2025 Md Chowdhury | Security and Risk Management
