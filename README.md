@@ -43,7 +43,7 @@ Applying STRIDE reveals the following threats to the current business operations
 | **Repudiation**             | Lack  of transaction logs allows denial of actions | Difficulty  in auditing, resolving disputes                  | 1.  Implement secure, tamper-evident transaction logging (Kent & Souppaya,  2006).   2. Use digital signatures to verify the integrity of transactions. |
 | **Information  Disclosure** | Unencrypted  emails expose customer data           | Loss of  customer trust, potential legal liabilities         | 1. Use  end-to-end encrypted email services.   2. Establish a data classification policy to ensure sensitive information is  always protected. |
 | **Denial  of Service**      | System  failures due to outdated hardware          | Operational  downtime, loss of sales                         | 1.  Upgrade outdated systems to meet current performance standards (Microsoft,  2018).   2. Implement redundancy in hardware to minimize the impact of failures. |
-| **Elevation  of Privilege** | Staff  access sensitive data without controls      | Unauthorized  changes, potential insider threats             | 1.  Implement multi-factor authentication (MFA) for sensitive data access.   2. Enforce principle of least privilege (POLP) to minimize unnecessary access  rights. |
+| **Elevation  of Privilege** | Staff  access sensitive data without controls      | Unauthorized  changes, potential insider threats             | 1.  Implement multi-factor authentication (MFA) for sensitive data access.   2. Enforce the principle of least privilege (POLP) to minimize unnecessary access  rights. |
 
 ### Unit 5: Security Standards in Industry
 - Examined industry-specific standards like GDPR, PCI-DSS, and HIPAA.
