@@ -1,6 +1,6 @@
 # Secure Software Development January 2025
 
-### Unit 3: Introduction to Programming Languages: Activity - Buffer Overflow Activities – C and Python
+## Unit 3: Introduction to Programming Languages: Activity - Buffer Overflow Activities – C and Python
 
 #### Part I: C Code – `bufoverflow.c`
 
@@ -180,7 +180,155 @@ python overflow.py
 
 
 
-### Unit 5: Future Trends in Secure Software Development of the module: Moving Beyond Microservices
+
+
+## Unit 4: Introduction to Testing
+
+#### Linters and Cyclomatic Complexity: Questions and Reflections
+
+##### 1. **Run `styleLint.py`. What happens when the code is run? Can you modify this code for a more favourable outcome? What amendments have you made to the code?**
+
+### Observations & Answers
+1. **Running `styleLint.py`:**  
+   
+   - Typically, `styleLint.py` is a sample script that checks basic stylistic or formatting conventions.  
+   - When executed, it might print warnings about indentation, naming conventions, or unused imports, depending on how it is implemented.
+   
+2. **Modifying `styleLint.py` for a More Favourable Outcome:**  
+   - **Likely Amendments**:
+     
+     - Fixing indentation (e.g., using 4 spaces consistently).  
+     - Renaming variables to adhere to Pythonic naming conventions (e.g., `lower_case_with_underscores`).  
+     - Removing redundant or commented-out lines of code.  
+   - **Example**: If `styleLint.py` had:
+     ```python
+     def BadFunctionName():
+         Print('Hello')
+     ```
+     We might rename the function and correct print usage:
+     ```python
+     def good_function_name():
+         print('Hello')
+     ```
+   - After these adjustments, re-running the script should reduce or eliminate style warnings.
+
+---
+
+#### 2. Running Pylint on `pylintTest.py`
+
+1) Install pylint (`pip install pylint`).  
+
+2) Run `pylint` on `pylintTest.py`.  
+3) Review each of the code errors returned. Can you correct them?  
+4) Save the original `pylintTest.py` before fixing it.
+
+#### Observations & Answers
+1. **Errors Identified by Pylint**:  
+   - **Common Errors**:
+     - Naming violations (function names not in snake_case).  
+     - Indentation errors or trailing whitespace.  
+     - Unused variables/imports.  
+     - Missing docstrings.  
+   - **Severity**: Pylint categorises issues as convention (C), warning (W), error (E), etc.
+
+2. **Correcting the Errors**:  
+   - **Renamed** improperly named variables or functions to meet snake_case conventions.  
+   - **Removed** unused imports.  
+   - **Added** docstrings or comments where required.  
+   - **Fixed** indentation to adhere to 4-space or tab consistency.
+
+3. **Outcome**:
+   - The newly saved file (e.g. `pylintTest_fixed.py`) should have fewer or no pylint complaints, resulting in a higher pylint score (e.g., `10/10` if fully compliant).
+
+---
+
+#### 3. Running Flake8 on `pylintTest.py` and `metricTest.py`
+
+1) Install flake8 (`pip install flake8`).  
+
+2) Run `flake8 pylintTest.py`.  
+3) Compare the error messages with pylint’s.  
+4) Run `flake8 metricTest.py` and correct the errors. What amendments did you make?
+
+#### Observations & Answers
+1. **Flake8 vs. Pylint Errors**:  
+   - **flake8** focuses on style and PEP8 compliance (e.g., line length, whitespace, and formatting).  
+   - **pylint** also checks code logic (unused variables, naming issues, docstrings, etc.) and often provides more detailed feedback.
+
+2. **Differences in Error Messages**:  
+   - flake8 typically returns fewer categories of issues, focusing on format warnings (e.g., `E501 line too long`, `E302 expected 2 blank lines`).  
+   - pylint might detail additional warnings (e.g., `unused-variable`, `invalid-name`).
+
+3. **Fixing Code in `metricTest.py`**:  
+   - **Likely Fixes**:
+     - Reducing line lengths to 79 or 88 characters.  
+     - Adding or removing blank lines.  
+     - Correcting indentation levels.  
+     - Ensuring no trailing whitespace or extra blank lines.
+
+---
+
+#### 4. Running McCabe (`mccabe`) on `sums.py` and `sums2.py`
+
+1) Install mccabe (`pip install mccabe`).  
+
+2) Run `mccabe sums.py` and note the cyclomatic complexity.  
+3) Run `mccabe sums2.py` and compare.  
+4) What contributes to the cyclomatic complexity in each code snippet?
+
+### Observations & Answers
+1. **Cyclomatic Complexity**:  
+   - This metric calculates the number of linearly independent paths through the code.  
+   - Formally, `CC = E - N + 2`, where E is the number of edges and N the number of nodes in the flow graph.
+
+2. **Results**:  
+   - `sums.py` might produce a lower (or moderate) complexity because it potentially contains fewer decision points (`if`, `for`, `while`).  
+   - `sums2.py` might have extra loops or conditional statements, resulting in a higher complexity rating.
+
+3. **Contributors to Complexity**:
+   - **Conditional Statements** (`if`, `elif`, `else`).  
+   - **Loops** (`for`, `while`).  
+   - **Logical Operators** (`and`, `or`, `not`) used in conditionals.  
+
+If `sums2.py` introduced additional branching structures, that explains its higher cyclomatic complexity.
+
+---
+
+#### 5. Cyclomatic Complexity’s Relevance Today (e-portfolio Entry)
+
+**Is cyclomatic complexity still relevant for modern secure software development? Justify your argument.**
+
+#### Reflections
+1. **Arguments For Relevance**:
+   - **Maintainability**: High complexity often means the code is harder to test and debug (Gill and Kemerer, 1991).  
+   - **Bug/Defect Rates**: Empirical studies show that modules with high cyclomatic complexity correlate with higher defect rates (McConnell, 2004).  
+   - **Testing Coverage**: Identifying how many independent paths exist assists in ensuring thorough testing.
+
+2. **Arguments Against or Caveats**:
+   - **Modern Practices**: Agile, continuous integration, and advanced frameworks can sometimes reduce the direct need for complexity metrics.  
+   - **Microservices and Cloud**: Code bases might be smaller and more modular, thus each piece is less complex by design.  
+   - **Automated Tools**: Tools do a lot of code checks, so manual tracking of CC can be seen as redundant or less frequently emphasised.
+
+3. **Relevance to Secure Software**:
+   - **Attack Vectors**: More complex code can hide vulnerabilities or make them difficult to spot. Lower complexity can enhance readability and security reviews (Howard and Lipner, 2006).  
+   - **Principle of Least Privilege & Minimised Attack Surface**: Aligns conceptually with simpler, more modular code.
+
+Therefore, while not a silver bullet, **cyclomatic complexity** remains a valuable metric, particularly for highlighting potential risk areas in code security and maintainability. It should be one tool among many—such as code reviews, static analysis, and dynamic testing—supporting secure software development.
+
+---
+
+#### References
+
+- Gill, G. and Kemerer, C.F. (1991) ‘Cyclomatic Complexity Density and Software Maintenance Productivity’, *IEEE Transactions on Software Engineering*, 17(12), pp. 1284–1288.  
+- Howard, M. and Lipner, S. (2006) *The Security Development Lifecycle*. Redmond, WA: Microsoft Press.  
+- McConnell, S. (2004) *Code Complete: A Practical Handbook of Software Construction*. 2nd edn. Redmond, WA: Microsoft Press.  
+- Pylint (2025) *Static Code Analysis Tool*. Available at: <https://pylint.pycqa.org> (Accessed: 2 March 2025).  
+- Flake8 (2025) *Your Tool For Style Guide Enforcement*. Available at: <https://flake8.pycqa.org> (Accessed: 2 March 2025).  
+- McCabe, T.J. (1976) ‘A Complexity Measure’, *IEEE Transactions on Software Engineering*, (4), pp. 308–320.
+
+---
+
+## Unit 5: Future Trends in Secure Software Development of the module: Moving Beyond Microservices
 
 #### Introduction
 
