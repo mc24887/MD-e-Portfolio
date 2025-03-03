@@ -186,7 +186,7 @@ python overflow.py
 
 #### Linters and Cyclomatic Complexity: Questions and Reflections
 
-##### 1. **Run `styleLint.py`. What happens when the code is run? Can you modify this code for a more favourable outcome? What amendments have you made to the code?**
+#### 1. **Run `styleLint.py`. What happens when the code is run? Can you modify this code for a more favourable outcome? What amendments have you made to the code?**
 
 ### Observations & Answers
 1. **Running `styleLint.py`:**  
@@ -201,6 +201,7 @@ python overflow.py
      - Renaming variables to adhere to Pythonic naming conventions (e.g., `lower_case_with_underscores`).  
      - Removing redundant or commented-out lines of code.  
    - **Example**: If `styleLint.py` had:
+     
      ```python
      def BadFunctionName():
          Print('Hello')
@@ -354,14 +355,6 @@ Modern software development continues to evolve beyond microservices to embrace 
 
 #### Formative Activity: RESTful API Creation
 
-This section aligns with the following learning outcomes:
-
-1. **Critically analyse development problems** and determine appropriate methodologies, tools, and techniques for programming solutions.  
-2. **Design and develop computer programs** to meet specified briefs, and critically evaluate resulting solutions.  
-3. **Implement and refine team skills** in a virtual, professional environment, reflecting real-life organisational roles and structures.
-
-Below are summarised answers to the formative activities based on the `api.py` script (which uses Flask and Flask-RESTful to create a basic RESTful API).
-
 #### API Code
 
 ```python
@@ -481,3 +474,159 @@ app.run(debug=True)
 **What capability is achieved by the Flask library?**
 
 - **Answer**: Flask streamlines the creation of web applications and APIs by providing lightweight scaffolding for routing, request handling, and templating (Grinberg, 2018). When extended with Flask-RESTful, it allows for straightforward endpoint definition and parsing of JSON-based requests.
+
+## Unit 6 :Development Individual Project: Coding Output
+
+``Microsoft Windows [Version 10.0.26100.3323]`
+`(c) Microsoft Corporation. All rights reserved.`
+
+`C:\Users\MC>cd "C:\Users\MC\OneDrive\Desktop\4.Secure Software Development\SCMA_Project"`
+
+`C:\Users\MC\OneDrive\Desktop\4.Secure Software Development\SCMA_Project>python main.py`
+
+`=== Login ===`
+`Enter username: admin`
+`Enter password:`
+`DEBUG: Entered Hash: 5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8`
+`DEBUG: Stored Hash: 5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8`
+`Welcome, admin!`
+
+`Options: [store, list, retrieve, register, exit]`
+`Enter choice: store`
+
+`=== Store File ===`
+`Enter file path: C:\Users\MC\OneDrive\Documents\sample.txt`
+`File stored securely.`
+
+`Options: [store, list, retrieve, register, exit]`
+`Enter choice: list`
+
+`=== Stored Files ===`
+`1 | sample.txt | Created: 2025-03-02 20:01:26.871513`
+`2 | sample.txt | Created: 2025-03-02 21:43:13.765517`
+`3 | sample.txt | Created: 2025-03-02 21:56:18.811683`
+
+`Options: [store, list, retrieve, register, exit]`
+`Enter choice: retrieve`
+`Enter file ID: 1`
+`File decrypted and saved as retrieved_sample.txt`
+
+`Options: [store, list, retrieve, register, exit]`
+`Enter choice: retrieve`
+`Enter file ID: 2`
+`File decrypted and saved as retrieved_sample.txt`
+
+`Options: [store, list, retrieve, register, exit]`
+`Enter choice: retrieve`
+`Enter file ID: 3`
+`File decrypted and saved as retrieved_sample.txt`
+
+`Options: [store, list, retrieve, register, exit]`
+`Enter choice: register`
+
+`=== Register User ===`
+`Enter new username: test_user`
+`Enter password:`
+`Assign role (admin/user): user`
+`User creation error: UNIQUE constraint failed: users.username`
+`User registration failed (username may already exist).`
+
+`Options: [store, list, retrieve, register, exit]`
+`Enter choice: exit`
+`Exiting program...`
+
+### Testing & Compliance
+
+``C:\Users\MC>cd "C:\Users\MC\OneDrive\Desktop\4.Secure Software Development\SCMA_Project"`
+
+`C:\Users\MC\OneDrive\Desktop\4.Secure Software Development\SCMA_Project>pip install bandit`
+`Requirement already satisfied: bandit in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (1.8.3)`
+`Requirement already satisfied: PyYAML>=5.3.1 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from bandit) (6.0.2)`
+`Requirement already satisfied: stevedore>=1.20.0 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from bandit) (5.4.1)`
+`Requirement already satisfied: rich in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from bandit) (13.9.4)`
+`Requirement already satisfied: colorama>=0.3.9 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from bandit) (0.4.6)`
+`Requirement already satisfied: pbr>=2.0.0 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from stevedore>=1.20.0->bandit) (6.1.1)`
+`Requirement already satisfied: markdown-it-py>=2.2.0 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from rich->bandit) (3.0.0)`
+`Requirement already satisfied: pygments<3.0.0,>=2.13.0 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from rich->bandit) (2.19.1)`
+`Requirement already satisfied: mdurl~=0.1 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from markdown-it-py>=2.2.0->rich->bandit) (0.1.2)`
+`Requirement already satisfied: setuptools in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from pbr>=2.0.0->stevedore>=1.20.0->bandit) (75.8.2)`
+
+`C:\Users\MC\OneDrive\Desktop\4.Secure Software Development\SCMA_Project>bandit -r .`
+`[main]  INFO    profile include tests: None`
+`[main]  INFO    profile exclude tests: None`
+`[main]  INFO    cli include tests: None`
+`[main]  INFO    cli exclude tests: None`
+`[main]  INFO    running on Python 3.14.0`
+`[manager]       ERROR   Exception occurred when executing tests against .\db_manager.py.`
+`[manager]       ERROR   Run "bandit --debug .\db_manager.py" to see the full traceback.`
+`[manager]       ERROR   Exception occurred when executing tests against .\encryption_manager.py.`
+`[manager]       ERROR   Run "bandit --debug .\encryption_manager.py" to see the full traceback.`
+`[manager]       ERROR   Exception occurred when executing tests against .\main.py.`
+`[manager]       ERROR   Run "bandit --debug .\main.py" to see the full traceback.`
+`Run started:2025-03-02 22:05:44.945488`
+
+`Test results:`
+        `No issues identified.`
+
+`Code scanned:`
+        `Total lines of code: 240`
+        `Total lines skipped (#nosec): 0`
+
+`Run metrics:`
+        `Total issues (by severity):`
+                `Undefined: 0`
+                `Low: 0`
+                `Medium: 0`
+                `High: 0`
+        `Total issues (by confidence):`
+                `Undefined: 0`
+                `Low: 0`
+                `Medium: 0`
+                `High: 0`
+`Files skipped (3):`
+        `.\db_manager.py (exception while scanning file)`
+        `.\encryption_manager.py (exception while scanning file)`
+        `.\main.py (exception while scanning file)`
+
+`C:\Users\MC\OneDrive\Desktop\4.Secure Software Development\SCMA_Project>pip install pylint`
+`Requirement already satisfied: pylint in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (3.3.4)`
+`Requirement already satisfied: dill>=0.3.6 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from pylint) (0.3.9)`
+`Requirement already satisfied: platformdirs>=2.2.0 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from pylint) (4.3.6)`
+`Requirement already satisfied: astroid<=3.4.0-dev0,>=3.3.8 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from pylint) (3.3.8)`
+`Requirement already satisfied: isort!=5.13.0,<7,>=4.2.5 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from pylint) (6.0.1)`
+`Requirement already satisfied: mccabe<0.8,>=0.6 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from pylint) (0.7.0)`
+`Requirement already satisfied: tomlkit>=0.10.1 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from pylint) (0.13.2)`
+`Requirement already satisfied: colorama>=0.4.5 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from pylint) (0.4.6)`
+
+`C:\Users\MC\OneDrive\Desktop\4.Secure Software Development\SCMA_Project>pylint main.py db_manager.py encryption_manager.py`
+`************* Module main`
+`main.py:18:0: C0103: Constant name "current_user" doesn't conform to UPPER_CASE naming style (invalid-name)`
+`main.py:19:0: C0103: Constant name "current_user_role" doesn't conform to UPPER_CASE naming style (invalid-name)`
+`main.py:121:11: W0718: Catching too general exception Exception (broad-exception-caught)`
+`main.py:127:4: W0603: Using the global statement (global-statement)`
+`main.py:11:0: C0411: standard import "datetime.datetime" should be placed before first party imports "db_manager.DBManager", "encryption_manager.EncryptionManager"  (wrong-import-order)`
+`************* Module db_manager`
+`db_manager.py:70:4: R0913: Too many arguments (6/5) (too-many-arguments)`
+`db_manager.py:70:4: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)`
+`************* Module encryption_manager`
+`encryption_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)`
+`encryption_manager.py:4:0: C0115: Missing class docstring (missing-class-docstring)`
+`encryption_manager.py:2:0: C0411: standard import "os" should be placed before third party import "cryptography.fernet.Fernet" (wrong-import-order)`
+
+------------------------------------------------------------------
+`Your code has been rated at 9.47/10 (previous run: 8.75/10, +0.72)`
+
+
+`C:\Users\MC\OneDrive\Desktop\4.Secure Software Development\SCMA_Project>pip install flake8`
+`Requirement already satisfied: flake8 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (7.1.2)`
+`Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from flake8) (0.7.0)`
+`Requirement already satisfied: pycodestyle<2.13.0,>=2.12.0 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from flake8) (2.12.1)`
+`Requirement already satisfied: pyflakes<3.3.0,>=3.2.0 in c:\users\mc\appdata\local\programs\python\python314\lib\site-packages (from flake8) (3.2.0)`
+
+`C:\Users\MC\OneDrive\Desktop\4.Secure Software Development\SCMA_Project>flake8 .`
+`.\db_manager.py:56:80: E501 line too long (91 > 79 characters)`
+`.\db_manager.py:75:80: E501 line too long (82 > 79 characters)`
+`.\db_manager.py:99:80: E501 line too long (80 > 79 characters)`
+`.\encryption_manager.py:4:1: E302 expected 2 blank lines, found 1`
+`.\main.py:86:80: E501 line too long (88 > 79 characters)`
+`.\main.py:102:80: E501 line too long (100 > 79 characters)``
