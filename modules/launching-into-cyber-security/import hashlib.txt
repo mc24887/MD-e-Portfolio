@@ -1,0 +1,18 @@
+import hashlib
+import hmac
+
+class User:
+    def __init__(self, username, password):
+        self.username = username
+        self.password_hash = self._hash_password(password)
+
+    def _hash_password(self, password):
+        salt = b'secret_salt'
+        return hmac.new(salt, password.encode('utf-8'), hashlib.sha256).hexdigest()
+
+    def verify_password(self, password):
+        return hmac.new(b'secret_salt', password.encode('utf-8'), hashlib.sha256).hexdigest() == self.password_hash
+
+# Example usage
+user = User('john_doe', 'secure_password')
+print(user.verify_password('secure_password'))  # Output: True
