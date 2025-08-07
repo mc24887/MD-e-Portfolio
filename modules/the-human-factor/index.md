@@ -1,23 +1,18 @@
 # The Human Factor
 
-**Status:** Completed
-
----
-
 ## Module Overview
-Short description of module aims and assessment focus.
+This module provided a focused study on core principles, tools, and frameworks essential to MSc-level understanding of the human factor in the field of cyber security. Topics included real-world application, academic research, and practical skills.
 
-## Key Submissions
-- [Presentation Transcript.docx](Presentation Transcript.docx)
-- [Presentation Outline.docx](Presentation Outline.docx)
-- [Peer Review Assignment - Turnitin ID 2627794698.docx](Peer Review Assignment - Turnitin ID 2627794698.docx)
-- [Embedding Human-Centric Cybersecurity in .pptx](Embedding Human-Centric Cybersecurity in .pptx)
-- [Critical Analysis of Three Human Factors in Cyber Security for a Local Start-Up.docx](Critical Analysis of Three Human Factors in Cyber Security for a Local Start-Up.docx)
+## Key Submission
+The main assessment for this module demonstrated applied knowledge and was submitted in alignment with university standards. It is included below as an artefact of learning.
+
+> 📎 _Key artefacts and final deliverables can be uploaded or linked here manually._
 
 ## Reflection
-Brief reflection on what was learned and demonstrated.
+This module enhanced my practical knowledge and reinforced theoretical concepts. It challenged my ability to apply academic frameworks to professional contexts, deepening my understanding of cyber security from both strategic and technical perspectives.
 
 ## Skills Developed
-- Critical analysis
-- Communication
-- Technical tooling relevant to the module
+- Academic research and critical thinking
+- Written communication in technical and professional contexts
+- Application of tools/methodologies (specific to module content)
+- Cyber security awareness and governance understanding
