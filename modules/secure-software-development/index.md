@@ -1,23 +1,18 @@
 # Secure Software Development
 
-**Status:** Completed
-
----
-
 ## Module Overview
-Short description of module aims and assessment focus.
+This module provided a focused study on core principles, tools, and frameworks essential to MSc-level understanding of secure software development in the field of cyber security. Topics included real-world application, academic research, and practical skills.
 
-## Key Submissions
-- [Group 1 - Design Proposal Report.docx](Group 1 - Design Proposal Report.docx)
-- [Individual Reflective Document.docx](Individual Reflective Document.docx)
-- [SCMA Testing Documentation.docx](SCMA Testing Documentation.docx)
-- [Peer review - Design Document.docx](Peer review - Design Document.docx)
-- [Initial_Post_UML_Security.docx](Initial_Post_UML_Security.docx)
+## Key Submission
+The main assessment for this module demonstrated applied knowledge and was submitted in alignment with university standards. It is included below as an artefact of learning.
+
+> 📎 _Key artefacts and final deliverables can be uploaded or linked here manually._
 
 ## Reflection
-Brief reflection on what was learned and demonstrated.
+This module enhanced my practical knowledge and reinforced theoretical concepts. It challenged my ability to apply academic frameworks to professional contexts, deepening my understanding of cyber security from both strategic and technical perspectives.
 
 ## Skills Developed
-- Critical analysis
-- Communication
-- Technical tooling relevant to the module
+- Academic research and critical thinking
+- Written communication in technical and professional contexts
+- Application of tools/methodologies (specific to module content)
+- Cyber security awareness and governance understanding
