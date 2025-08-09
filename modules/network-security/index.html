@@ -11,25 +11,25 @@
     </div>
   </div>
   <div class="container page">
-    <div class="section"><h2>Module Overview</h2><p class="small">Covered segmentation, access control and secure protocols. Used packet analysis to evidence misconfigurations and cleartext flows; recommended least‑privilege segmentation and TLS hardening.</p></div>
-    <div class="section"><h2>Key Submissions</h2><ul class="compact small"><li><strong>Packet analysis brief</strong> — Interpreted captures to find unauthenticated services and weak ciphers; proposed pragmatic mitigations (service scoping, TLS policy, credential hygiene).</li>
-<li><strong>Segmentation rationale</strong> — Defined tiers and inter‑tier ACLs; justified micro‑segmentation where value/risk warranted it.</li></ul></div>
-    <div class="section"><h2>Supporting Artefacts</h2><ul class="compact small"><li>Wireshark notes/captures documenting findings</li>
-<li>Example ACLs including allow‑list patterns and logging rules</li>
-<li>TLS hygiene checklist: protocol floor, cipher policy, certificate handling</li></ul></div>
-    <div class="section"><h2>Reflection</h2><p class="small">Reading the wire provided objective evidence. Least privilege became the default and logging moved from ‘nice‑to‑have’ to a requirement for verification.</p></div>
-    <div class="section"><h2>Milestones</h2><ul class="compact small"><li>Profile traffic and assets</li>
-<li>Propose segmentation model and ACL sets</li>
-<li>Analyse captures and document misconfigurations</li>
-<li>Harden TLS and credential handling</li>
-<li>Validate with logging and re‑capture</li></ul></div>
+    <div class="section"><h2>Module Overview</h2><p class="small">Segmentation, access control and protocol security. Packet analysis surfaced misconfigurations and cleartext patterns; implemented least‑privilege network design and TLS hygiene.</p></div>
+    <div class="section"><h2>Key Submissions</h2><ul class="compact small"><li><strong>Packet analysis brief</strong> — Documented unauthenticated services, weak crypto and unnecessary exposure using captures; proposed scoped services, TLS policy and credential hygiene.</li>
+<li><strong>Segmentation rationale</strong> — Defined tiers and inter‑tier rules; justified micro‑segmentation for high‑value assets; retained simplicity elsewhere.</li></ul></div>
+    <div class="section"><h2>Supporting Artefacts</h2><ul class="compact small"><li>Wireshark notes and evidence</li>
+<li>ACL patterns with logging</li>
+<li>TLS policy (protocol floor, cipher baseline, certificates)</li></ul></div>
+    <div class="section"><h2>Reflection</h2><p class="small">Evidence‑led changes improved security and operability; least‑privilege and logging became defaults.</p></div>
+    <div class="section"><h2>Milestones</h2><ul class="compact small"><li>Profile traffic and classify assets</li>
+<li>Propose segmentation/ACLs</li>
+<li>Analyse captures and document issues</li>
+<li>Harden TLS and credentials</li>
+<li>Re‑validate via logging/captures</li></ul></div>
     <div class="section"><h2>Skills Developed</h2><ul class="compact small"><li>Wireshark</li>
 <li>ACL design</li>
 <li>TLS/PKI hygiene</li>
 <li>Log‑driven investigation</li></ul></div>
     <div class="section">
       <h2>Feedback</h2>
-      <p class="small">I welcome constructive feedback on clarity, depth and evidence. Use the form or raise a GitHub issue.</p>
+      <p class="small">Constructive feedback on clarity, depth and evidence is welcome. Use the form or raise a GitHub issue.</p>
       <form action="mailto:mc24887@essex.ac.uk" method="post" enctype="text/plain" class="small">
         <label>Name<br><input type="text" name="name" required></label><br><br>
         <label>Email<br><input type="email" name="email" required></label><br><br>
