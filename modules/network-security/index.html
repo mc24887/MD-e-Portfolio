@@ -11,17 +11,18 @@
     </div>
   </div>
   <div class="container page">
-    <div class="section"><h2>Module Overview</h2><p class="small">Segmentation, access control and secure protocols with packet analysis; emphasised least privilege across layers. Hands‑on analysis using Wireshark to identify misconfigurations and unencrypted traffic, followed by low‑impact remediation plans.</p></div>
-    <div class="section"><h2>Key Submissions</h2><ul class="compact small"><li><strong>Packet analysis brief</strong> — Identified misconfigurations/cleartext leakage; proposed low‑impact mitigations supported by captures.</li>
-<li><strong>Segmentation rationale</strong> — Micro‑segmentation plan that balanced performance, manageability and least privilege.</li></ul></div>
-    <div class="section"><h2>Supporting Artefacts</h2><ul class="compact small"><li>Wireshark notes/captures</li>
-<li>ACL examples for core segments</li>
-<li>TLS hygiene checklist for services</li></ul></div>
-    <div class="section"><h2>Reflection</h2><p class="small">Reading the wire demystified networks and reinforced least privilege as the default stance for connectivity and monitoring.</p></div>
-    <div class="section"><h2>Milestones</h2><ul class="compact small"><li>2024‑05‑06: Baseline capture and traffic profiling</li>
-<li>2024‑05‑11: Designed ACL sets and candidate segments</li>
-<li>2024‑05‑18: Packet analysis brief submitted</li>
-<li>2024‑05‑24: Segmentation rationale delivered with change plan</li></ul></div>
+    <div class="section"><h2>Module Overview</h2><p class="small">Covered segmentation, access control and secure protocols. Used packet analysis to evidence misconfigurations and cleartext flows; recommended least‑privilege segmentation and TLS hardening.</p></div>
+    <div class="section"><h2>Key Submissions</h2><ul class="compact small"><li><strong>Packet analysis brief</strong> — Interpreted captures to find unauthenticated services and weak ciphers; proposed pragmatic mitigations (service scoping, TLS policy, credential hygiene).</li>
+<li><strong>Segmentation rationale</strong> — Defined tiers and inter‑tier ACLs; justified micro‑segmentation where value/risk warranted it.</li></ul></div>
+    <div class="section"><h2>Supporting Artefacts</h2><ul class="compact small"><li>Wireshark notes/captures documenting findings</li>
+<li>Example ACLs including allow‑list patterns and logging rules</li>
+<li>TLS hygiene checklist: protocol floor, cipher policy, certificate handling</li></ul></div>
+    <div class="section"><h2>Reflection</h2><p class="small">Reading the wire provided objective evidence. Least privilege became the default and logging moved from ‘nice‑to‑have’ to a requirement for verification.</p></div>
+    <div class="section"><h2>Milestones</h2><ul class="compact small"><li>Profile traffic and assets</li>
+<li>Propose segmentation model and ACL sets</li>
+<li>Analyse captures and document misconfigurations</li>
+<li>Harden TLS and credential handling</li>
+<li>Validate with logging and re‑capture</li></ul></div>
     <div class="section"><h2>Skills Developed</h2><ul class="compact small"><li>Wireshark</li>
 <li>ACL design</li>
 <li>TLS/PKI hygiene</li>
@@ -34,7 +35,7 @@
         <label>Email<br><input type="email" name="email" required></label><br><br>
         <label>Feedback<br><textarea name="message" rows="4" required></textarea></label><br><br>
         <button type="submit">Send feedback</button>
-        <a class="small" style="margin-left:10px" href="https://github.com/mc24887/MSc-Cyber-Security-ePortfolio/issues/new" target="_blank">Suggest via GitHub Issue</a>
+        <a class="small" style="margin-left:10px" href="https://github.com/mc24887/MD-e-Portfolio/issues/new" target="_blank">Suggest via GitHub Issue</a>
       </form>
       <p class="small">Alternatively, email: <kbd>mc24887@essex.ac.uk</kbd></p>
     </div>
