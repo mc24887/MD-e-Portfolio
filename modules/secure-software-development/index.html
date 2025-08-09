@@ -1,59 +1,71 @@
 <!doctype html>
-<html lang='en'>
-<head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>Secure Software Development – e-Portfolio</title>
-<style>
-body{font-family:Segoe UI, Roboto, Arial, sans-serif; margin:0; background:#f7f9fc;}
-header{background:#163a6b;color:#fff;padding:20px 16px}
-.wrap{max-width:1100px;margin:0 auto;padding:16px}
-h1{margin:0}
-.badge{display:inline-block;margin-left:10px;padding:4px 10px;border-radius:999px;font-size:.9rem;background:#e7f7ed;color:#1f7a3d}
-.section{background:#fff;border:1px solid #e1e7f5;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.04);margin:14px 0;padding:16px}
-table{width:100%;border-collapse:collapse}
-td,th{border-bottom:1px solid #eef2fb;padding:8px}
-.footer{text-align:center;color:#ccc;padding:20px}
-a.home{color:#163a6b;text-decoration:none;font-weight:700}
-</style></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Secure Software Development – e-Portfolio</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
 <body>
-<header><div class='wrap'><a class='home' href='../../index.html'>&larr; Home</a><h1>Secure Software Development <span class='badge'>Completed</span></h1></div></header>
-<div class='wrap'>
-  <div class='section'>
-    <h2>Module Overview</h2>
-    <p>Short description of module aims, learning outcomes, and assessment focus.</p>
+  <div class="header">
+    <div class="nav">
+      <div class="brand"><a href="../../index.html" style="color:#fff;text-decoration:none;">&larr; Home</a></div>
+      <div class="small">Secure Software Development <span class="badge done">Completed</span></div>
+    </div>
   </div>
-  <div class='section'>
-    <h2>Key Submissions</h2>
-    <table><tr><td><a href='Group 1 - Design Proposal Report.docx' download>Group 1 - Design Proposal Report.docx</a></td></tr>
-<tr><td><a href='Individual Reflective Document.docx' download>Individual Reflective Document.docx</a></td></tr>
-<tr><td><a href='SCMA Testing Documentation.docx' download>SCMA Testing Documentation.docx</a></td></tr>
-<tr><td><a href='Peer review - Design Document.docx' download>Peer review - Design Document.docx</a></td></tr>
-<tr><td><a href='Future trends in Secure Software Development.docx' download>Future trends in Secure Software Development.docx</a></td></tr>
-<tr><td><a href='Initial_Post_UML_Security.docx' download>Initial_Post_UML_Security.docx</a></td></tr></table>
+  <div class="container page">
+    <div class="section">
+      <h2>Module Overview</h2>
+      <p class="small">Practised secure design/coding, triaged CWE-class findings, and embedded SAST/DAST/secrets scanning into CI.</p>
+    </div>
+    <div class="section">
+      <h2>Key Submissions</h2>
+      <ul class="compact small">
+        <li><strong>Secure code review</strong> – Findings grouped by CWE with concrete fixes and regression tests.</li>
+<li><strong>Build pipeline note</strong> – SAST/DAST and secrets scanning with pass/fail policy gates.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>Supporting Artefacts</h2>
+      <ul class="compact small">
+        <li>Pre-commit hooks</li>
+<li>Dependency audit notes</li>
+<li>Coverage snapshot</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>Reflection</h2>
+      <p class="small">Automation turned security from a gate into a **repeatable habit**.</p>
+    </div>
+    <div class="section">
+      <h2>Milestones</h2>
+      <ul class="compact small" id="milestones">
+        <li class="small">Add milestone here (e.g., 2025‑10‑15: submitted final report).</li>
+      </ul>
+      <p class="small">Update milestones by editing this page in Typora or GitHub — it’s just a list.</p>
+    </div>
+    <div class="section">
+      <h2>Skills Developed</h2>
+      <ul class="compact small">
+        <li>CWE/OWASP Top 10</li>
+<li>SAST/DAST</li>
+<li>Threat modelling</li>
+<li>CI policy gates</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>Feedback</h2>
+      <p class="small">I welcome constructive feedback on clarity, depth and evidence. Use the form or raise a GitHub issue.</p>
+      <form action="mailto:youremail@example.com" method="post" enctype="text/plain" class="small">
+        <label>Name<br><input type="text" name="name" required></label><br><br>
+        <label>Email<br><input type="email" name="email" required></label><br><br>
+        <label>Feedback<br><textarea name="message" rows="4" required></textarea></label><br><br>
+        <button type="submit">Send feedback</button>
+        <a class="small" style="margin-left:10px" href="https://github.com/mc24887/REPO-NAME/issues/new" target="_blank">Suggest via GitHub Issue</a>
+      </form>
+      <p class="small">Alternatively, email: <kbd>youremail@example.com</kbd></p>
+    </div>
   </div>
-  <div class='section'>
-    <h2>Supporting Artefacts</h2>
-    <table><tr><td><a href='README.md' download>README.md</a></td></tr>
-<tr><td><a href='exit.txt' download>exit.txt</a></td></tr>
-<tr><td><a href='list.txt' download>list.txt</a></td></tr>
-<tr><td><a href='register.txt' download>register.txt</a></td></tr>
-<tr><td><a href='requirements.txt' download>requirements.txt</a></td></tr>
-<tr><td><a href='retrieve.txt' download>retrieve.txt</a></td></tr>
-<tr><td><a href='retrieved_sample.txt' download>retrieved_sample.txt</a></td></tr>
-<tr><td><a href='sample.txt' download>sample.txt</a></td></tr>
-<tr><td><a href='store.txt' download>store.txt</a></td></tr></table>
-  </div>
-  <div class='section'>
-    <h2>Reflection</h2>
-    <p>Concise synthesis of learning, decisions made, and professional relevance.</p>
-  </div>
-  <div class='section'>
-    <h2>Skills Developed</h2>
-    <ul>
-      <li>Critical analysis and academic writing</li>
-      <li>Communication and documentation</li>
-      <li>Technical tooling relevant to the module</li>
-    </ul>
-  </div>
-</div>
-<div class='footer'>&copy; 2025 MSc Cyber Security</div>
-</body></html>
+  <div class="footer">© 2025–2026 mc24887 | MSc Cyber Security</div>
+</body>
+</html>
