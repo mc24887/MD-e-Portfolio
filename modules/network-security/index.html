@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Network Security – e‑Portfolio</title>
+<title>Network Security – e-Portfolio</title>
 <link rel="stylesheet" href="../../assets/style.css">
 </head><body>
   <div class="header">
@@ -11,22 +11,110 @@
     </div>
   </div>
   <div class="container page">
-    <div class="section"><h2>Module Overview</h2><p class="small">Segmentation, access control and protocol security. Packet analysis surfaced misconfigurations and cleartext patterns; implemented least‑privilege network design and TLS hygiene.</p></div>
-    <div class="section"><h2>Key Submissions</h2><ul class="compact small"><li><strong>Packet analysis brief</strong> — Documented unauthenticated services, weak crypto and unnecessary exposure using captures; proposed scoped services, TLS policy and credential hygiene.</li>
-<li><strong>Segmentation rationale</strong> — Defined tiers and inter‑tier rules; justified micro‑segmentation for high‑value assets; retained simplicity elsewhere.</li></ul></div>
-    <div class="section"><h2>Supporting Artefacts</h2><ul class="compact small"><li>Wireshark notes and evidence</li>
-<li>ACL patterns with logging</li>
-<li>TLS policy (protocol floor, cipher baseline, certificates)</li></ul></div>
-    <div class="section"><h2>Reflection</h2><p class="small">Evidence‑led changes improved security and operability; least‑privilege and logging became defaults.</p></div>
-    <div class="section"><h2>Milestones</h2><ul class="compact small"><li>Profile traffic and classify assets</li>
-<li>Propose segmentation/ACLs</li>
-<li>Analyse captures and document issues</li>
-<li>Harden TLS and credentials</li>
-<li>Re‑validate via logging/captures</li></ul></div>
-    <div class="section"><h2>Skills Developed</h2><ul class="compact small"><li>Wireshark</li>
-<li>ACL design</li>
-<li>TLS/PKI hygiene</li>
-<li>Log‑driven investigation</li></ul></div>
+
+    <div class="section"><h2>Module Overview</h2>
+      <p class="small">Segmentation, access control and protocol security. Packet analysis surfaced misconfigurations and clear-text patterns; implemented least-privilege network design and TLS hygiene.</p>
+    </div>
+
+    <div class="section"><h2>Key Submissions</h2>
+      <ul class="compact small">
+        <li><strong>Packet analysis brief</strong> — Documented unauthenticated services, weak crypto and unnecessary exposure using captures; proposed scoped services, TLS policy and credential hygiene.</li>
+        <li><strong>Segmentation rationale</strong> — Defined tiers and inter-tier rules; justified micro-segmentation for high-value assets; retained simplicity elsewhere.</li>
+      </ul>
+
+      <!-- Added: practical, evidence-rich details (expandable) -->
+      <details class="small"><summary><strong>Recon &amp; enumeration (commands &amp; excerpts)</strong></summary>
+        <pre><code># Baseline service & OS detection
+nmap -sC -sV -O -Pn target.example.com
+
+# TLS protocols & cipher suites (identify legacy/weak)
+nmap -sV -p 443,8443 --script ssl-enum-ciphers target.example.com
+
+# Top UDP for exposed infra (noise-controlled)
+nmap -sU --top-ports 20 --defeat-rst-ratelimit target.example.com</code></pre>
+        <p class="small"><em>Findings (representative):</em> HTTP on 8080 (no TLS); TLSv1.0 enabled on 443 with weak ciphers; verbose banners on SSH. <em>Actions:</em> enforce TLS-only, enable HSTS, drop TLSv1.0/1.1 and weak suites, minimise banner leakage.</p>
+      </details>
+
+      <details class="small"><summary><strong>Web application hardening (ZAP headers)</strong></summary>
+        <pre><code>X-Frame-Options: DENY
+Content-Security-Policy: default-src 'self'
+Referrer-Policy: no-referrer
+X-Content-Type-Options: nosniff
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload</code></pre>
+        <p class="small">Post-fix scan showed reduced risk surface (clickjacking, MIME sniffing) and enforced HTTPS across sub-domains.</p>
+      </details>
+
+      <details class="small"><summary><strong>Packet-level verification (Wireshark/tshark)</strong></summary>
+        <pre><code># Locate clear-text credentials pre-fix
+tshark -Y "tcp.port == 8080 and http.request.method == \"POST\"" -T fields -e ip.src -e http.host -e http.request.uri
+
+# Confirm protocol floor post-fix
+tshark -Y "tls.handshake.version" -T fields -e frame.number -e tls.handshake.version
+
+# Quick check for secrets in the clear
+tshark -Y "http && (authorization || (form-urlencoded && http.request.method == \"POST\"))"</code></pre>
+        <ul class="small">
+          <li><strong>Before:</strong> plaintext POST credentials on 8080; mixed TLS versions on 443.</li>
+          <li><strong>After:</strong> TLS-only with HSTS; no clear-text secrets observed; TLS≥1.2 only.</li>
+        </ul>
+      </details>
+
+      <details class="small"><summary><strong>Segmentation &amp; ACL examples</strong></summary>
+        <pre><code># Router ACL (edge → app-tier)
+ip access-list extended APP-IN
+  remark Allow HTTPS from WAF only
+  permit tcp host 10.0.10.5 10.0.20.0 0.0.0.255 eq 443
+  remark Deny lateral movement by default
+  deny   ip 10.0.0.0 0.0.255.255 10.0.0.0 0.0.255.255
+  permit ip any any log</code></pre>
+        <pre><code># Linux host firewall (least-privilege)
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow from 10.0.10.5 to any port 443 proto tcp comment "WAF → app only"</code></pre>
+        <p class="small">Rules applied at multiple control points (edge, distribution, host) with logging to validate policy intent.</p>
+      </details>
+
+      <details class="small"><summary><strong>TLS policy (minimums &amp; hygiene)</strong></summary>
+        <pre><code># Example nginx snippet (protocol/cipher floor)
+ssl_protocols TLSv1.2 TLSv1.3;
+ssl_ciphers   HIGH:!aNULL:!MD5:!3DES:!RC4;
+ssl_prefer_server_ciphers on;
+ssl_session_tickets off;</code></pre>
+        <p class="small">Certificate management improved via short-lived certs, OCSP stapling and automated rotation.</p>
+      </details>
+    </div>
+
+    <div class="section"><h2>Supporting Artefacts</h2>
+      <ul class="compact small">
+        <li>Wireshark notes and evidence</li>
+        <li>ACL patterns with logging</li>
+        <li>TLS policy (protocol floor, cipher baseline, certificates)</li>
+      </ul>
+    </div>
+
+    <div class="section"><h2>Reflection</h2>
+      <p class="small">Evidence-led changes improved security and operability; least-privilege and logging became defaults.</p>
+    </div>
+
+    <div class="section"><h2>Milestones</h2>
+      <ul class="compact small">
+        <li>Profile traffic and classify assets</li>
+        <li>Propose segmentation/ACLs</li>
+        <li>Analyse captures and document issues</li>
+        <li>Harden TLS and credentials</li>
+        <li>Re-validate via logging/captures</li>
+      </ul>
+    </div>
+
+    <div class="section"><h2>Skills Developed</h2>
+      <ul class="compact small">
+        <li>Wireshark</li>
+        <li>ACL design</li>
+        <li>TLS/PKI hygiene</li>
+        <li>Log-driven investigation</li>
+      </ul>
+    </div>
+
     <div class="section">
       <h2>Feedback</h2>
       <p class="small">Constructive feedback on clarity, depth and evidence is welcome. Use the form or raise a GitHub issue.</p>
@@ -39,6 +127,7 @@
       </form>
       <p class="small">Alternatively, email: <kbd>mc24887@essex.ac.uk</kbd></p>
     </div>
+
   </div>
   <div class="footer">© 2025–2026 mc24887 | MSc Cyber Security</div>
 </body></html>
