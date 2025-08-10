@@ -1,28 +1,44 @@
-<!doctype html><html lang="en"><head>
+<!doctype html>
+<html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Network Security – Evidence</title><link rel="stylesheet" href="../../assets/style.css"></head><body>
-<div class="header">
-  <div class="topbar">
-    <div><a href="../../index.html" style="color:#fff;text-decoration:none">MSc Cyber Security</a></div>
-    <nav><a href="../../index.html">Home</a><a href="../research-methods-and-professional-practice/index.html">Current Module</a></nav>
+<title>Network Security – e‑Portfolio</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head><body>
+  <div class="header">
+    <div class="nav">
+      <div class="brand"><a href="../../index.html" style="color:#fff;text-decoration:none;">&larr; Home</a></div>
+      <div class="small">Network Security <span class="badge done">Completed</span></div>
+    </div>
   </div>
-</div>
-<div class="container">
-  <div class="section"><h2>Module Overview</h2><p class="small">Nmap/OpenVAS/ZAP/Wireshark used to enumerate services, confirm issues, and propose hardening actions.</p></div>
-  <div class="section"><h2>Key Submissions & Evidence</h2>
-    <ul class="small">
-      <li><strong>Nmap & SSL Enum</strong> — 80/443/8080, legacy Apache, SSLv2/weak ciphers, TRACE enabled. <!-- INSERT: Nmap_Scan_Results.png --></li>
-<li><strong>OpenVAS</strong> — Automated scan corroboration + awareness of scanner blind spots. <!-- INSERT: OpenVAS_Report_excerpt.png --></li>
-<li><strong>ZAP</strong> — Medium: /server-status exposed (OWASP A05, CWE-538). <!-- INSERT: ZAP_Report_Screenshot.png --></li>
-<li><strong>Wireshark</strong> — Unencrypted HTTP traffic; enforce TLS 1.2+. <!-- INSERT: Wireshark_TLS_Capture.png --></li>
-    </ul>
-    <!-- INSERT: module visuals, screenshots, code snippets below -->
+  <div class="container page">
+    <div class="section"><h2>Module Overview</h2><p class="small">Segmentation, access control and protocol security. Packet analysis surfaced misconfigurations and cleartext patterns; implemented least‑privilege network design and TLS hygiene.</p></div>
+    <div class="section"><h2>Key Submissions</h2><ul class="compact small"><li><strong>Packet analysis brief</strong> — Documented unauthenticated services, weak crypto and unnecessary exposure using captures; proposed scoped services, TLS policy and credential hygiene.</li>
+<li><strong>Segmentation rationale</strong> — Defined tiers and inter‑tier rules; justified micro‑segmentation for high‑value assets; retained simplicity elsewhere.</li></ul></div>
+    <div class="section"><h2>Supporting Artefacts</h2><ul class="compact small"><li>Wireshark notes and evidence</li>
+<li>ACL patterns with logging</li>
+<li>TLS policy (protocol floor, cipher baseline, certificates)</li></ul></div>
+    <div class="section"><h2>Reflection</h2><p class="small">Evidence‑led changes improved security and operability; least‑privilege and logging became defaults.</p></div>
+    <div class="section"><h2>Milestones</h2><ul class="compact small"><li>Profile traffic and classify assets</li>
+<li>Propose segmentation/ACLs</li>
+<li>Analyse captures and document issues</li>
+<li>Harden TLS and credentials</li>
+<li>Re‑validate via logging/captures</li></ul></div>
+    <div class="section"><h2>Skills Developed</h2><ul class="compact small"><li>Wireshark</li>
+<li>ACL design</li>
+<li>TLS/PKI hygiene</li>
+<li>Log‑driven investigation</li></ul></div>
+    <div class="section">
+      <h2>Feedback</h2>
+      <p class="small">Constructive feedback on clarity, depth and evidence is welcome. Use the form or raise a GitHub issue.</p>
+      <form action="mailto:mc24887@essex.ac.uk" method="post" enctype="text/plain" class="small">
+        <label>Name<br><input type="text" name="name" required></label><br><br>
+        <label>Email<br><input type="email" name="email" required></label><br><br>
+        <label>Feedback<br><textarea name="message" rows="4" required></textarea></label><br><br>
+        <button type="submit">Send feedback</button>
+        <a class="small" style="margin-left:10px" href="https://github.com/mc24887/MD-e-Portfolio/issues/new" target="_blank">Suggest via GitHub Issue</a>
+      </form>
+      <p class="small">Alternatively, email: <kbd>mc24887@essex.ac.uk</kbd></p>
+    </div>
   </div>
-  <div class="section"><h2>Supporting Artefacts</h2><ul class="small"><li>Nmap outputs</li><li>OpenVAS summary</li><li>ZAP report</li><li>pcap notes</li></ul></div>
-  <div class="section"><h2>Reflection</h2><p class="small">Reinforced value of manual verification alongside scanners; delivered specific config hardening steps.</p></div>
-  <div class="section"><h2>Skills Developed</h2><ul class="small"><li>Service discovery</li><li>TLS hygiene</li><li>Web testing</li><li>Packet analysis</li><li>OWASP/CWE mapping</li></ul></div>
-  <div class="section"><h2>Professional Impact</h2><p class="small">Directly supports pentesting and secure configuration reviews.</p></div>
-  <div class="section"><h2>Feedback</h2><p class="small">Email feedback to <kbd>mc24887@essex.ac.uk</kbd>.</p></div>
-</div>
-<div class="footer">© 2025–2026 mc24887 | MSc Cyber Security</div>
+  <div class="footer">© 2025–2026 mc24887 | MSc Cyber Security</div>
 </body></html>
