@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Secure System Architecture – e‑Portfolio</title>
+<title>Secure System Architecture – e-Portfolio</title>
 <link rel="stylesheet" href="../../assets/style.css">
 </head><body>
   <div class="header">
@@ -11,25 +11,59 @@
     </div>
   </div>
   <div class="container page">
-    <div class="section"><h2>Module Overview</h2><p class="small">Reference architecture with layered defences and explicit trust boundaries. Chose patterns optimising clarity, observability and resilience.</p></div>
-    <div class="section"><h2>Key Submissions</h2><ul class="compact small"><li><strong>Reference architecture</strong> — Identity‑centric access, segmented paths, monitored control points, break‑glass procedures.</li>
-<li><strong>Pattern comparison</strong> — Reverse proxy vs API gateway vs service mesh — authN/Z, routing, observability and ops impact.</li></ul></div>
-    <div class="section"><h2>Supporting Artefacts</h2><ul class="compact small"><li>DFDs and boundary justifications</li>
-<li>Logging/telemetry strategy and retention</li>
-<li>Resilience plan: HA, backups, recovery</li></ul></div>
-    <div class="section"><h2>Reflection</h2><p class="small">Clarity reduces operational risk; observability treated as a control improves both security and reliability.</p></div>
-    <div class="section"><h2>Milestones</h2><ul class="compact small"><li>Define context and attributes</li>
-<li>Map data flows and boundaries</li>
-<li>Compare/justify patterns</li>
-<li>Draft, review and refine architecture</li>
-<li>Codify assumptions and controls</li></ul></div>
-    <div class="section"><h2>Skills Developed</h2><ul class="compact small"><li>Zero‑trust patterns</li>
-<li>DFDs</li>
-<li>Observability</li>
-<li>Availability vs security</li></ul></div>
+
+    <div class="section"><h2>Module Overview</h2>
+      <p class="small">Reference architecture with explicit trust boundaries, zero-trust communication and layered controls. Prioritised weaknesses using CWE/CWSS and validated choices via executable checks and logs.</p>
+    </div>
+
+    <div class="section"><h2>Key Submissions</h2>
+      <ul class="compact small">
+        <li><strong>CWSS prioritisation</strong> — Input validation and authn/authz defects ranked highest due to frequency and exploitability.</li>
+        <li><strong>Attack/Defence Trees</strong> — Multi-stage paths and countermeasures mapped to decision points.</li>
+        <li><strong>Simulation</strong> — Sanity checks for mTLS, signed messages, origin verification and role-based access.</li>
+      </ul>
+
+      <details class="small"><summary><strong>Evidence (log excerpt)</strong></summary>
+        <pre><code>INFO Sim OK: comms encrypted; injection blocked; origin checked; role verified</code></pre>
+      </details>
+
+      <details class="small"><summary><strong>Zero-trust flow (pseudo)</strong></summary>
+        <pre><code>client --TLS--> edge → WAF → gateway (OIDC) → service
+Policies:
+  - mTLS internal; short-lived tokens (scopes/claims)
+  - explicit allow-lists; deny by default
+  - audit/telemetry with integrity</code></pre>
+      </details>
+    </div>
+
+    <div class="section"><h2>Supporting Artefacts</h2>
+      <ul class="compact small"><li>CWSS table</li><li>ADTree diagrams</li><li>Simulation outline and logs</li></ul>
+    </div>
+
+    <div class="section"><h2>Reflection</h2>
+      <p class="small">Models → design → executable evidence made trade-offs explicit and auditable, highlighting which controls actually reduced attack paths.</p>
+    </div>
+
+    <div class="section"><h2>Milestones</h2>
+      <ul class="compact small"><li>Trust boundaries and assets</li><li>Zero-trust comms baseline</li><li>Authn/authz hardening</li><li>Operational safeguards</li><li>Evidence review</li></ul>
+    </div>
+
+    <div class="section"><h2>Skills Developed</h2>
+      <ul class="compact small"><li>Architecture modelling</li><li>CWE/CWSS mapping</li><li>Crypto-backed service trust</li><li>Safe defaults</li></ul>
+    </div>
+
+    <div class="section"><h2>References</h2>
+      <p class="small">
+        MITRE (2014) <em>Common Weakness Scoring System (CWSS) v1.0</em>. MITRE.<br>
+        Schneier, B. (1999) ‘Attack Trees’, <em>Dr. Dobb’s Journal</em>.<br>
+        NIST (2020) <em>SP 800-207: Zero Trust Architecture</em>. NIST.<br>
+        IETF (2018) <em>RFC 8446: TLS 1.3</em>. IETF.
+      </p>
+    </div>
+
     <div class="section">
       <h2>Feedback</h2>
-      <p class="small">Constructive feedback on clarity, depth and evidence is welcome. Use the form or raise a GitHub issue.</p>
+      <p class="small">Constructive feedback is welcome. Use the form or raise a GitHub issue.</p>
       <form action="mailto:mc24887@essex.ac.uk" method="post" enctype="text/plain" class="small">
         <label>Name<br><input type="text" name="name" required></label><br><br>
         <label>Email<br><input type="email" name="email" required></label><br><br>
@@ -39,6 +73,7 @@
       </form>
       <p class="small">Alternatively, email: <kbd>mc24887@essex.ac.uk</kbd></p>
     </div>
+
   </div>
   <div class="footer">© 2025–2026 mc24887 | MSc Cyber Security</div>
 </body></html>
