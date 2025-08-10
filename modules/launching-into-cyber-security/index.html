@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Launching into Cyber Security – e‑Portfolio</title>
+<title>Launching into Cyber Security – e-Portfolio</title>
 <link rel="stylesheet" href="../../assets/style.css">
 </head><body>
   <div class="header">
@@ -11,88 +11,92 @@
     </div>
   </div>
   <div class="container page">
-    <div class="section"><h2>Module Overview</h2><p class="small">Established core security principles (CIA), the modern threat landscape, and governance alignment using recognised frameworks (NIST CSF; ISO/IEC 27001). Emphasis on linking controls to risk rather than tools.</p></div>
+
+    <div class="section"><h2>Module Overview</h2>
+      <p class="small">Established core security principles (CIA), threat landscape and governance alignment (NIST CSF; ISO/IEC 27001). Adopted a <em>risk-first</em> stance so controls are justified by asset exposure and obligations, not tools.</p>
+    </div>
 
     <div class="section"><h2>Key Submissions</h2>
       <ul class="compact small">
-        <li><strong>Position paper</strong> — Analysed CIA trade‑offs in SME scenarios; mapped recommendations to NIST CSF Functions; prioritised controls by risk‑reduction vs effort.</li>
-        <li><strong>Annotated glossary</strong> — Living reference linking common vulnerabilities, ATT&amp;CK behaviours, and mitigations (e.g., MFA, segmentation, secure backups).</li>
+        <li><strong>Position paper</strong> — CIA trade-offs driving pragmatic control choices in SMEs; mapped to NIST CSF Functions; prioritised by risk-reduction vs. effort.</li>
+        <li><strong>Annotated glossary</strong> — Reusable vocabulary linking common weaknesses (e.g., SQLi), ATT&amp;CK behaviours and mitigations (MFA, segmentation, immutable backups).</li>
       </ul>
 
-      <!-- Added: practical, evidence‑rich details (expandable) -->
       <details class="small"><summary><strong>Risk → control mapping (sample)</strong></summary>
         <pre><code>Risk: Ransomware on file shares; long RTO; data loss.
-Context: SME; mixed Windows endpoints; limited ops capacity.
-
-Controls (mapped to NIST CSF):
-  IDENTIFY (ID.AM, ID.RA): asset inventory; crown‑jewel classification
-  PROTECT  (PR.AC, PR.IP): MFA, least privilege; application allow‑listing
-  DETECT   (DE.AE): suspicious process/file events; canary files
-  RESPOND  (RS.MI): isolate hosts; disable affected creds; comms playbook
-  RECOVER  (RC.RP): immutable offsite backups; restore tests; staged recovery</code></pre>
+Controls (NIST CSF):
+  IDENTIFY: asset inventory; crown-jewel classification
+  PROTECT : MFA & least privilege; allow-listing; hardening
+  DETECT  : suspicious file/process events; canary files
+  RESPOND : isolation playbook; disable creds; comms
+  RECOVER : immutable offsite backups; restore tests; staged recovery</code></pre>
       </details>
 
-      <details class="small"><summary><strong>Evidence &amp; snippets</strong></summary>
+      <details class="small"><summary><strong>Secure coding evidence (snippets)</strong></summary>
         <p class="small"><em>Password hashing (Argon2id)</em></p>
         <pre><code>from argon2 import PasswordHasher
-ph = PasswordHasher()           # memory‑hard; resists GPU cracking
-h = ph.hash(password)           # store this hash
-ph.verify(h, candidate)         # constant‑time verify</code></pre>
+ph = PasswordHasher()
+h = ph.hash(password)      # store hash
+ph.verify(h, candidate)    # constant-time verify</code></pre>
 
         <p class="small"><em>Parameterised SQL (avoid injection)</em></p>
         <pre><code>cur.execute("INSERT INTO users(email, hash) VALUES(?, ?)", (email, h))</code></pre>
 
-        <p class="small"><em>AES‑256 encryption at rest (random IV; CBC + padding)</em></p>
+        <p class="small"><em>AES-256 at rest (random IV; CBC + padding)</em></p>
         <pre><code>from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
-
 def encrypt(key, data):
     iv = get_random_bytes(16)
-    cipher = AES.new(key, AES.MODE_CBC, iv)
-    return iv + cipher.encrypt(pad(data, 16))
+    c = AES.new(key, AES.MODE_CBC, iv)
+    return iv + c.encrypt(pad(data, 16))</code></pre>
 
-def decrypt(key, blob):
-    iv, ct = blob[:16], blob[16:]
-    return unpad(AES.new(key, AES.MODE_CBC, iv).decrypt(ct), 16)</code></pre>
-
-        <p class="small"><em>Test to reject privilege injection (defence‑in‑depth)</em></p>
+        <p class="small"><em>Defence against privilege injection (test)</em></p>
         <pre><code>def test_checkout_rejects_unexpected_fields(client):
     r = client.post("/checkout", json={"total": 10, "role": "admin"})
     assert r.status_code == 400</code></pre>
       </details>
-
-      <details class="small"><summary><strong>Glossary examples (excerpt)</strong></summary>
-        <table>
-          <thead><tr><th class="small">Term</th><th class="small">What/Why</th><th class="small">Mitigation</th></tr></thead>
-          <tbody>
-            <tr><td class="small">Credential stuffing</td><td class="small">Reuse of breached creds across sites.</td><td class="small">MFA; rate‑limits; IP/device risk; password manager rollout.</td></tr>
-            <tr><td class="small">CWE‑89 (SQLi)</td><td class="small">Untrusted input reaches SQL interpreter.</td><td class="small">Parameterised queries; allow‑lists; strict error handling.</td></tr>
-            <tr><td class="small">RPO/RTO</td><td class="small">Data loss/restore time objectives.</td><td class="small">Immutable backups; restore drills; tiered recovery.</td></tr>
-          </tbody>
-        </table>
-      </details>
     </div>
 
-    <div class="section"><h2>Supporting Artefacts</h2><ul class="compact small"><li>Framework cross‑walk (NIST CSF ↔ ISO/IEC 27001 ↔ CIS Controls)</li>
-<li>PDP/skills matrix aligned to SFIA/NICE</li></ul></div>
+    <div class="section"><h2>Supporting Artefacts</h2>
+      <ul class="compact small">
+        <li>Framework cross-walk (NIST CSF ↔ ISO/IEC 27001 ↔ CIS Controls)</li>
+        <li>PDP/skills matrix aligned to SFIA/NICE</li>
+      </ul>
+    </div>
 
-    <div class="section"><h2>Reflection</h2><p class="small">Adopted a risk‑first approach: controls justified by risk reduction, obligations and measurable effectiveness.</p></div>
+    <div class="section"><h2>Reflection</h2>
+      <p class="small">Shifted from tool-first to risk-first thinking. Controls create value when justified against asset exposure, legal obligations and measurable effectiveness.</p>
+    </div>
 
-    <div class="section"><h2>Milestones</h2><ul class="compact small"><li>Clarify context and objectives</li>
-<li>Map frameworks to enable reuse</li>
-<li>Draft PDP focus areas</li>
-<li>Write position paper and peer‑review</li>
-<li>Update glossary iteratively</li></ul></div>
+    <div class="section"><h2>Milestones</h2>
+      <ul class="compact small">
+        <li>Clarify context and objectives</li>
+        <li>Map frameworks for reuse</li>
+        <li>Draft PDP focus areas</li>
+        <li>Write position paper and peer-review</li>
+        <li>Iteratively expand glossary</li>
+      </ul>
+    </div>
 
-    <div class="section"><h2>Skills Developed</h2><ul class="compact small"><li>Risk vocabulary</li>
-<li>Standards mapping</li>
-<li>Critical reading</li>
-<li>Structured note‑taking</li></ul></div>
+    <div class="section"><h2>Skills Developed</h2>
+      <ul class="compact small">
+        <li>Risk vocabulary and trade-offs</li><li>Standards mapping</li><li>Critical reading</li><li>Structured note-taking</li>
+      </ul>
+    </div>
+
+    <div class="section"><h2>References</h2>
+      <p class="small">
+        ISO (2022) <em>ISO/IEC 27001:2022 Information security, cybersecurity and privacy protection—ISMS</em>. ISO.<br>
+        NIST (2018) <em>Framework for Improving Critical Infrastructure Cybersecurity</em>, v1.1. NIST.<br>
+        Biryukov, D. et&nbsp;al. (2021) ‘Argon2 Memory-Hard Functions’, <em>RFC 9106</em>. IETF.<br>
+        NIST (2001) <em>FIPS 197: Advanced Encryption Standard (AES)</em>. NIST.
+      </p>
+    </div>
 
     <div class="section">
       <h2>Feedback</h2>
-      <p class="small">Constructive feedback on clarity, depth and evidence is welcome. Use the form or raise a GitHub issue.</p>
+      <p class="small">Constructive feedback is welcome. Use the form or raise a GitHub issue.</p>
       <form action="mailto:mc24887@essex.ac.uk" method="post" enctype="text/plain" class="small">
         <label>Name<br><input type="text" name="name" required></label><br><br>
         <label>Email<br><input type="email" name="email" required></label><br><br>
@@ -102,6 +106,7 @@ def decrypt(key, blob):
       </form>
       <p class="small">Alternatively, email: <kbd>mc24887@essex.ac.uk</kbd></p>
     </div>
+
   </div>
   <div class="footer">© 2025–2026 mc24887 | MSc Cyber Security</div>
 </body></html>
