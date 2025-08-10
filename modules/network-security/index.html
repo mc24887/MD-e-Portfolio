@@ -13,87 +13,60 @@
   <div class="container page">
 
     <div class="section"><h2>Module Overview</h2>
-      <p class="small">Segmentation, access control and protocol security. Packet analysis surfaced misconfigurations and clear-text patterns; implemented least-privilege network design and TLS hygiene.</p>
+      <p class="small">Segmentation, access control and protocol security. Packet analysis surfaced misconfigurations and clear-text patterns; implemented least-privilege network design and TLS hygiene across services.</p>
     </div>
 
     <div class="section"><h2>Key Submissions</h2>
       <ul class="compact small">
-        <li><strong>Packet analysis brief</strong> — Documented unauthenticated services, weak crypto and unnecessary exposure using captures; proposed scoped services, TLS policy and credential hygiene.</li>
-        <li><strong>Segmentation rationale</strong> — Defined tiers and inter-tier rules; justified micro-segmentation for high-value assets; retained simplicity elsewhere.</li>
+        <li><strong>Packet analysis brief</strong> — Identified unauthenticated services, weak crypto and unnecessary exposure using Nmap, OpenVAS, ZAP and Wireshark; delivered fixes and retests.</li>
+        <li><strong>Segmentation rationale</strong> — Tiered architecture and inter-tier ACLs; micro-segmented high-value assets; kept low-risk areas simple to reduce ops toil.</li>
       </ul>
 
-      <!-- Added: practical, evidence-rich details (expandable) -->
       <details class="small"><summary><strong>Recon &amp; enumeration (commands &amp; excerpts)</strong></summary>
         <pre><code># Baseline service & OS detection
 nmap -sC -sV -O -Pn target.example.com
-
-# TLS protocols & cipher suites (identify legacy/weak)
-nmap -sV -p 443,8443 --script ssl-enum-ciphers target.example.com
-
-# Top UDP for exposed infra (noise-controlled)
-nmap -sU --top-ports 20 --defeat-rst-ratelimit target.example.com</code></pre>
-        <p class="small"><em>Findings (representative):</em> HTTP on 8080 (no TLS); TLSv1.0 enabled on 443 with weak ciphers; verbose banners on SSH. <em>Actions:</em> enforce TLS-only, enable HSTS, drop TLSv1.0/1.1 and weak suites, minimise banner leakage.</p>
+# TLS protocols & cipher suites
+nmap -sV -p 443,8443 --script ssl-enum-ciphers target.example.com</code></pre>
+        <p class="small"><em>Findings:</em> HTTP on 8080 (no TLS); TLSv1.0 enabled; verbose SSH banners. <em>Actions:</em> force TLS-only, enable HSTS, remove weak suites, minimise banners.</p>
       </details>
 
-      <details class="small"><summary><strong>Web application hardening (ZAP headers)</strong></summary>
+      <details class="small"><summary><strong>Web hardening (ZAP headers)</strong></summary>
         <pre><code>X-Frame-Options: DENY
 Content-Security-Policy: default-src 'self'
 Referrer-Policy: no-referrer
 X-Content-Type-Options: nosniff
 Strict-Transport-Security: max-age=31536000; includeSubDomains; preload</code></pre>
-        <p class="small">Post-fix scan showed reduced risk surface (clickjacking, MIME sniffing) and enforced HTTPS across sub-domains.</p>
       </details>
 
       <details class="small"><summary><strong>Packet-level verification (Wireshark/tshark)</strong></summary>
-        <pre><code># Locate clear-text credentials pre-fix
+        <pre><code># Pre-fix: clear-text POSTs
 tshark -Y "tcp.port == 8080 and http.request.method == \"POST\"" -T fields -e ip.src -e http.host -e http.request.uri
-
-# Confirm protocol floor post-fix
-tshark -Y "tls.handshake.version" -T fields -e frame.number -e tls.handshake.version
-
-# Quick check for secrets in the clear
-tshark -Y "http && (authorization || (form-urlencoded && http.request.method == \"POST\"))"</code></pre>
-        <ul class="small">
-          <li><strong>Before:</strong> plaintext POST credentials on 8080; mixed TLS versions on 443.</li>
-          <li><strong>After:</strong> TLS-only with HSTS; no clear-text secrets observed; TLS≥1.2 only.</li>
-        </ul>
+# Post-fix: TLS floor & no secrets
+tshark -Y "tls.handshake.version" -T fields -e frame.number -e tls.handshake.version</code></pre>
       </details>
 
       <details class="small"><summary><strong>Segmentation &amp; ACL examples</strong></summary>
-        <pre><code># Router ACL (edge → app-tier)
-ip access-list extended APP-IN
+        <pre><code>ip access-list extended APP-IN
   remark Allow HTTPS from WAF only
   permit tcp host 10.0.10.5 10.0.20.0 0.0.0.255 eq 443
-  remark Deny lateral movement by default
   deny   ip 10.0.0.0 0.0.255.255 10.0.0.0 0.0.255.255
   permit ip any any log</code></pre>
-        <pre><code># Linux host firewall (least-privilege)
-ufw default deny incoming
-ufw default allow outgoing
+        <pre><code>ufw default deny incoming
 ufw allow from 10.0.10.5 to any port 443 proto tcp comment "WAF → app only"</code></pre>
-        <p class="small">Rules applied at multiple control points (edge, distribution, host) with logging to validate policy intent.</p>
-      </details>
-
-      <details class="small"><summary><strong>TLS policy (minimums &amp; hygiene)</strong></summary>
-        <pre><code># Example nginx snippet (protocol/cipher floor)
-ssl_protocols TLSv1.2 TLSv1.3;
-ssl_ciphers   HIGH:!aNULL:!MD5:!3DES:!RC4;
-ssl_prefer_server_ciphers on;
-ssl_session_tickets off;</code></pre>
-        <p class="small">Certificate management improved via short-lived certs, OCSP stapling and automated rotation.</p>
       </details>
     </div>
 
     <div class="section"><h2>Supporting Artefacts</h2>
       <ul class="compact small">
-        <li>Wireshark notes and evidence</li>
-        <li>ACL patterns with logging</li>
-        <li>TLS policy (protocol floor, cipher baseline, certificates)</li>
+        <li>Nmap and OpenVAS outputs with triage notes</li>
+        <li>ZAP report with header diffs</li>
+        <li>Wireshark capture notes (filters and frames)</li>
+        <li>TLS policy (protocol floor, cipher baseline, cert rotation)</li>
       </ul>
     </div>
 
     <div class="section"><h2>Reflection</h2>
-      <p class="small">Evidence-led changes improved security and operability; least-privilege and logging became defaults.</p>
+      <p class="small">Combining automation with packet-level evidence reduced false positives and produced actionable remediation that operations could adopt quickly.</p>
     </div>
 
     <div class="section"><h2>Milestones</h2>
@@ -107,17 +80,23 @@ ssl_session_tickets off;</code></pre>
     </div>
 
     <div class="section"><h2>Skills Developed</h2>
-      <ul class="compact small">
-        <li>Wireshark</li>
-        <li>ACL design</li>
-        <li>TLS/PKI hygiene</li>
-        <li>Log-driven investigation</li>
-      </ul>
+      <ul class="compact small"><li>Wireshark</li><li>ACL design</li><li>TLS/PKI hygiene</li><li>Log-driven investigation</li></ul>
+    </div>
+
+    <div class="section"><h2>References</h2>
+      <p class="small">
+        Lyon, G. (2009) <em>Nmap Network Scanning</em>. Insecure.Org.<br>
+        Greenbone (2024) <em>OpenVAS / GVM Documentation</em>. Greenbone Networks.<br>
+        OWASP (2024) <em>OWASP ZAP Project</em>. OWASP.<br>
+        IETF (2012) <em>RFC 6797: HTTP Strict Transport Security (HSTS)</em>. IETF.<br>
+        IETF (2018) <em>RFC 8446: The Transport Layer Security (TLS) Protocol Version 1.3</em>. IETF.<br>
+        Combs, G. (ed.) (2024) <em>Wireshark User’s Guide</em>. Wireshark Foundation.
+      </p>
     </div>
 
     <div class="section">
       <h2>Feedback</h2>
-      <p class="small">Constructive feedback on clarity, depth and evidence is welcome. Use the form or raise a GitHub issue.</p>
+      <p class="small">Constructive feedback is welcome. Use the form or raise a GitHub issue.</p>
       <form action="mailto:mc24887@essex.ac.uk" method="post" enctype="text/plain" class="small">
         <label>Name<br><input type="text" name="name" required></label><br><br>
         <label>Email<br><input type="email" name="email" required></label><br><br>
