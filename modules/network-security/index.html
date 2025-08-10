@@ -1,32 +1,73 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Network Security – e‑Portfolio</title>
-<link rel="stylesheet" href="../../assets/style.css">
-</head><body>
-  <div class="header">
-    <div class="nav">
-      <div class="brand"><a href="../../index.html" style="color:#fff;text-decoration:none;">&larr; Home</a></div>
-      <div class="small">Network Security <span class="badge done">Completed</span></div>
-    </div>
-  </div>
-  <div class="container page">
-    <div class="section"><h2>Module Overview</h2><p class="small">Segmentation, access control and protocol security. Packet analysis surfaced misconfigurations and cleartext patterns; implemented least‑privilege network design and TLS hygiene.</p></div>
-    <div class="section"><h2>Key Submissions</h2><ul class="compact small"><li><strong>Packet analysis brief</strong> — Documented unauthenticated services, weak crypto and unnecessary exposure using captures; proposed scoped services, TLS policy and credential hygiene.</li>
-<li><strong>Segmentation rationale</strong> — Defined tiers and inter‑tier rules; justified micro‑segmentation for high‑value assets; retained simplicity elsewhere.</li></ul></div>
-    <div class="section"><h2>Supporting Artefacts</h2><ul class="compact small"><li>Wireshark notes and evidence</li>
-<li>ACL patterns with logging</li>
-<li>TLS policy (protocol floor, cipher baseline, certificates)</li></ul></div>
-    <div class="section"><h2>Reflection</h2><p class="small">Evidence‑led changes improved security and operability; least‑privilege and logging became defaults.</p></div>
-    <div class="section"><h2>Milestones</h2><ul class="compact small"><li>Profile traffic and classify assets</li>
-<li>Propose segmentation/ACLs</li>
-<li>Analyse captures and document issues</li>
-<li>Harden TLS and credentials</li>
-<li>Re‑validate via logging/captures</li></ul></div>
-    <div class="section"><h2>Skills Developed</h2><ul class="compact small"><li>Wireshark</li>
-<li>ACL design</li>
-<li>TLS/PKI hygiene</li>
-<li>Log‑driven investigation</li></ul></div>
+<section class="card">
+  <h2>Module Overview</h2>
+  <p>
+    Built a practical assessment pipeline across host and web layers using Nmap, OpenVAS, OWASP ZAP and
+    Wireshark. Automated results were validated at packet level and turned into an impact‑driven remediation plan.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Key Submissions &amp; Evidence</h2>
+
+  <h3>Service &amp; TLS enumeration (Nmap)</h3>
+  <pre><code>nmap -sC -sV -O -Pn target.example.com
+nmap -sV -p 80,443,8080 --script ssl-enum-ciphers target.example.com</code></pre>
+  <ul>
+    <li>Found HTTP on 8080 (plaintext) and weak TLS suites on 443.</li>
+    <li>Actions: force TLS‑only, enable HSTS, remove legacy ciphers, minimise banner leakage.</li>
+  </ul>
+
+  <h3>Vulnerability scanning &amp; triage (OpenVAS)</h3>
+  <ul>
+    <li>Prioritised items with clear exploit paths (credential exposure, weak TLS) over low‑impact noise.</li>
+  </ul>
+
+  <h3>Web assessment (OWASP ZAP)</h3>
+  <pre><code># Example hardening
+X-Frame-Options: DENY
+Content-Security-Policy: default-src 'self'
+Referrer-Policy: no-referrer
+X-Content-Type-Options: nosniff
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload</code></pre>
+
+  <h3>Packet‑level verification (Wireshark)</h3>
+  <pre><code>tcp.port == 80 and http
+http.request.method == "POST"
+tls.handshake.version</code></pre>
+  <ul>
+    <li>Before: plaintext POST credentials on 8080.</li>
+    <li>After: TLS‑only with HSTS; no sensitive content observed in clear‑text.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Supporting Artefacts</h2>
+  <ul>
+    <li>Nmap outputs (service/TLS enumeration).</li>
+    <li>OpenVAS scan with triage notes.</li>
+    <li>ZAP report and header diffs.</li>
+    <li>Wireshark capture notes (filters and frames).</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Reflection</h2>
+  <p>
+    Combining automation with packet‑level proof reduced false positives and produced
+    remediation that operations could apply quickly.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Skills Developed</h2>
+  <ul>
+    <li>Service/TLS enumeration and cipher hygiene.</li>
+    <li>Risk‑centred vuln triage.</li>
+    <li>Header hardening and CSP tuning.</li>
+    <li>Evidence‑based validation with Wireshark.</li>
+  </ul>
+</section>
+
     <div class="section">
       <h2>Feedback</h2>
       <p class="small">Constructive feedback on clarity, depth and evidence is welcome. Use the form or raise a GitHub issue.</p>
