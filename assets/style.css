@@ -1,17 +1,52 @@
-:root{--bg:#0b1220;--panel:#0f172a;--ink:#eaf2ff;--muted:#b8c4e5;--brand:#2f54eb;--stroke:#243b6b;--r:16px}
-*{box-sizing:border-box}html,body{margin:0;padding:0}
-body{font-family:Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-a{color:#cde1ff}
-.header{background:var(--brand);color:#fff}
-.nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:14px 16px}
-.hero{padding:22px 16px;text-align:center}
-.container{max-width:1200px;margin:0 auto;padding:16px}
-.section{background:var(--panel);border:1px solid var(--stroke);border-radius:var(--r);box-shadow:0 6px 18px rgba(0,0,0,.35);padding:18px;margin:16px 0}
-.small{color:var(--muted);line-height:1.65}
-.badge{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;border:1px solid #bfd0ff;background:#e6efff;color:#0b1f6d;font-size:.8rem}
-.badge.progress{background:#fff6e5;color:#7a4d00;border-color:#ffd89a}
-.badge.pending{background:#e2e8f0;color:#1f2937;border-color:#cbd5e1}
+:root{
+  --bg:#0b1220;
+  --surface:#0f172a;
+  --ink:#eaf2ff;
+  --ink-strong:#e6f0ff;
+  --muted:#b8c4e5;
+  --brand:#2f54eb;
+  --brand-ink:#ffffff;
+  --card:#e9eef7;
+  --pill-ok-bg:#e7f9ef; --pill-ok-txt:#0b6b3a; --pill-ok-br:#bfead2;
+  --pill-pr-bg:#fff1db; --pill-pr-txt:#8a5200; --pill-pr-br:#ffd595;
+  --pill-pe-bg:#e7eef6; --pill-pe-txt:#334155; --pill-pe-br:#cbd5e1;
+  --stroke:#22335e;
+  --r:16px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:Segoe UI, Roboto, Arial, sans-serif;background:var(--surface);color:var(--ink)}
+
+/* Header / hero */
+.header{background:var(--brand);color:var(--brand-ink)}
+.topbar{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:12px 18px;font-weight:600}
+.topbar a{color:var(--brand-ink);text-decoration:none;margin-left:18px;opacity:.95}
+.hero{max-width:1200px;margin:0 auto;padding:34px 18px 46px;text-align:center}
+.hero h1{margin:0 0 8px 0;font-size:2rem}
+.hero p{margin:0;color:#e9f2ff;opacity:.95}
+
+/* Container */
+.container{max-width:1200px;margin:0 auto;padding:22px 18px}
+
+/* Grid of module cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media (max-width: 1024px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width: 640px){.grid{grid-template-columns:1fr}}
+
+.card{background:var(--card);color:#0b1b35;border:0;box-shadow:0 8px 20px rgba(0,0,0,.35);border-radius:18px;padding:18px 20px}
+.card a{color:#0b1b35;text-decoration:none;font-weight:700}
+.badges{margin-top:10px}
+.pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:.85rem;border:1px solid}
+.pill.ok{background:var(--pill-ok-bg);color:var(--pill-ok-txt);border-color:var(--pill-ok-br)}
+.pill.progress{background:var(--pill-pr-bg);color:var(--pill-pr-txt);border-color:var(--pill-pr-br)}
+.pill.pending{background:var(--pill-pe-bg);color:var(--pill-pe-txt);border-color:var(--pill-pe-br)}
+
+.footer{background:var(--brand);color:#fff;text-align:center;padding:14px;margin-top:28px}
+
+/* Module detail pages reuse darker panels */
+.section{background:var(--surface);border:1px solid var(--stroke);border-radius:var(--r);box-shadow:0 6px 18px rgba(0,0,0,.35);padding:18px;margin:16px 0}
+.small{color:var(--ink-strong);line-height:1.65}
 table{width:100%;border-collapse:collapse}
 th,td{border:1px solid #29457a;padding:8px;text-align:left}
 th{background:#0e1b34}
-.footer{background:var(--brand);color:#fff;text-align:center;padding:14px;margin-top:28px}
