@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Secure Software Development – e-Portfolio</title>
+<title>Secure Software Development – e‑Portfolio</title>
 <link rel="stylesheet" href="../../assets/style.css">
 </head><body>
   <div class="header">
@@ -10,78 +10,101 @@
       <div class="small">Secure Software Development <span class="badge done">Completed</span></div>
     </div>
   </div>
-  <div class="container page">
 
+  <div class="container page">
     <div class="section"><h2>Module Overview</h2>
-      <p class="small">Implemented a secure content management app (SCMA) with encrypted storage and fine-grained RBAC. Quality gates (unit tests, SAST, code style, peer review) enforced remediation before merge.</p>
+      <p class="small">Designed and implemented a secure component with traceable requirements, SAST/DAST gates, peer review and test‑driven remediation.</p>
     </div>
 
     <div class="section"><h2>Key Submissions</h2>
       <ul class="compact small">
-        <li><strong>Design → code</strong> — CryptoBox (AES-based), role checks, input validation and safe error handling.</li>
-        <li><strong>CI/CD hardening</strong> — SAST (Bandit/CodeQL), linting (flake8), tests (pytest), secret scanning; failure blocks release.</li>
+        <li><strong>Design Proposal & UML</strong> — authN/authZ flows, validation, logging, secrets handling, secure defaults.</li>
+        <li><strong>SCMA Testing Documentation</strong> — unit/integration coverage, regression triggers, acceptance tests.</li>
+        <li><strong>Peer Review & Reflective Document</strong> — POSSE/STRIDE considerations; trade‑offs and fixes.</li>
       </ul>
-
-      <details class="small"><summary><strong>Selected snippets</strong></summary>
-        <pre><code>from cryptography.fernet import Fernet
-class CryptoBox:
-    def __init__(self, key: bytes): self.f = Fernet(key)
-    def encrypt(self, b: bytes) -> bytes: return self.f.encrypt(b)
-    def decrypt(self, t: bytes) -> bytes: return self.f.decrypt(t)
-
-def can_publish(user): return user.role in {'editor','admin'}</code></pre>
-        <pre><code>bandit -r scma/ -f txt
-flake8 scma/ --max-line-length=100
-pytest -q</code></pre>
-      </details>
     </div>
 
     <div class="section"><h2>Supporting Artefacts</h2>
       <ul class="compact small">
-        <li>Design &amp; threat notes (encryption boundaries, role matrix)</li>
-        <li>SAST logs and review diffs</li>
-        <li>Test results and coverage snapshot</li>
+        <li>Code snippets showing parameterised queries, input allow‑lists, error handling, safe logging, CSP.</li>
+        <li>Pipeline rules: fail on SAST/DAST violations, coverage thresholds enforced.</li>
       </ul>
     </div>
 
     <div class="section"><h2>Reflection</h2>
-      <p class="small">Threats → mitigations → tests. Peer review tightened input validation and error handling with minimal user friction.</p>
+      <p class="small">Security by design stuck when tests became the contract and pipelines failed hard on violations; reviews got faster and clearer.</p>
     </div>
 
     <div class="section"><h2>Milestones</h2>
       <ul class="compact small">
-        <li>Design &amp; threat model</li><li>CryptoBox + RBAC</li><li>Tests + SAST; fix cycle</li><li>Peer review and hardening</li>
+        <li>Define “secure defaults” & abuse cases</li>
+        <li>Write tests first; wire SAST/DAST</li>
+        <li>Implement; review; remediate</li>
+        <li>Regression pack; acceptance tests</li>
       </ul>
     </div>
 
     <div class="section"><h2>Skills Developed</h2>
-      <ul class="compact small"><li>OWASP ASVS/Top 10</li><li>Static analysis &amp; TDD</li><li>RBAC/least privilege</li><li>CI gatekeeping</li></ul>
+      <ul class="compact small">
+        <li>Secure design & coding</li>
+        <li>SAST/DAST practices</li>
+        <li>Test‑driven remediation</li>
+        <li>Team review culture</li>
+      </ul>
     </div>
 
-    <div class="section"><h2>References</h2>
-      <p class="small">
-        OWASP (2021) <em>OWASP Top 10: 2021</em>. OWASP.<br>
-        OWASP (2023) <em>Application Security Verification Standard v4.0.3</em>. OWASP.<br>
-        MITRE (2024) <em>Common Weakness Enumeration (CWE)</em>. MITRE.<br>
-        PyCQA (2024) <em>Bandit: Security linter for Python</em>. PyCQA.<br>
-        Python Packaging (2024) <em>pytest documentation</em>. PyPA.<br>
-        Cryptography (2024) <em>Fernet (symmetric encryption)</em>. cryptography.io.
-      </p>
+    <div class="section">
+      <h2>Evidence (selected)</h2>
+
+      <details class="small" open>
+        <summary><strong>Secure coding extracts</strong></summary>
+        <pre><code class="small">
+// Java (JDBC): parameterised query
+var ps = con.prepareStatement("SELECT * FROM users WHERE email=?");
+ps.setString(1, email);
+
+// Python (Flask): allowlist roles + CSRF
+ALLOWED_ROLES = {"admin","analyst","viewer"}
+if role not in ALLOWED_ROLES: abort(400)
+        </code></pre>
+      </details>
+
+      <details class="small">
+        <summary><strong>DAST checks</strong></summary>
+        <pre><code class="small">
+zap-baseline.py -t http://localhost:8080 -r zap-baseline.html
+        </code></pre>
+        <ul class="compact small">
+          <li>Missing HSTS and CSP on early builds → added; retest clean.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="section">
+      <h2>Findings & Actions</h2>
+      <table class="small" style="width:100%">
+        <thead><tr><th>Finding</th><th>Action</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>Input validation gaps</td><td>Allowlists + central validators</td><td>Injection surface ↓</td></tr>
+          <tr><td>Secrets in env</td><td>Vaulted secrets, rotating tokens</td><td>Leak risk ↓; audit improved</td></tr>
+          <tr><td>Weak headers</td><td>CSP/HSTS/XFO/Referrer‑Policy</td><td>Browser security ↑</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="section">
       <h2>Feedback</h2>
-      <p class="small">Constructive feedback is welcome. Use the form or raise a GitHub issue.</p>
+      <p class="small">Constructive feedback on clarity, depth and evidence is welcome. Use the form or raise a GitHub issue.</p>
       <form action="mailto:mc24887@essex.ac.uk" method="post" enctype="text/plain" class="small">
         <label>Name<br><input type="text" name="name" required></label><br><br>
         <label>Email<br><input type="email" name="email" required></label><br><br>
         <label>Feedback<br><textarea name="message" rows="4" required></textarea></label><br><br>
         <button type="submit">Send feedback</button>
-        <a class="small" style="margin-left:10px" href="https://github.com/mc24887/MD-e-Portfolio/issues/new" target="_blank">Suggest via GitHub Issue</a>
+        <a class="small" style="margin-left:10px" target="_blank" href="https://github.com/mc24887/MD-e-Portfolio/issues/new">Suggest via GitHub Issue</a>
       </form>
       <p class="small">Alternatively, email: <kbd>mc24887@essex.ac.uk</kbd></p>
     </div>
-
   </div>
+
   <div class="footer">© 2025–2026 mc24887 | MSc Cyber Security</div>
 </body></html>
