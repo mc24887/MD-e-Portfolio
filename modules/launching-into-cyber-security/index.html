@@ -10,87 +10,113 @@
       <div class="small">Launching into Cyber Security <span class="badge done">Completed</span></div>
     </div>
   </div>
+
   <div class="container page">
 
     <div class="section"><h2>Module Overview</h2>
-      <p class="small">Established core security principles (CIA), threat landscape and governance alignment (NIST CSF; ISO/IEC 27001). Adopted a <em>risk-first</em> stance so controls are justified by asset exposure and obligations, not tools.</p>
+      <p class="small">
+        Delivered a secure online shopping system proposal and supporting security design outline. 
+        Covered threat modelling (STRIDE/DREAD), UML architecture, secure coding, and a full test plan.
+        Applied industry frameworks and coding standards to produce a complete, evidence-backed solution 
+        for a local SME client scenario.
+      </p>
     </div>
 
     <div class="section"><h2>Key Submissions</h2>
-      <ul class="compact small">
-        <li><strong>Position paper</strong> — CIA trade-offs driving pragmatic control choices in SMEs; mapped to NIST CSF Functions; prioritised by risk-reduction vs. effort.</li>
-        <li><strong>Annotated glossary</strong> — Reusable vocabulary linking common weaknesses (e.g., SQLi), ATT&amp;CK behaviours and mitigations (MFA, segmentation, immutable backups).</li>
-      </ul>
 
-      <details class="small"><summary><strong>Risk → control mapping (sample)</strong></summary>
-        <pre><code>Risk: Ransomware on file shares; long RTO; data loss.
-Controls (NIST CSF):
-  IDENTIFY: asset inventory; crown-jewel classification
-  PROTECT : MFA & least privilege; allow-listing; hardening
-  DETECT  : suspicious file/process events; canary files
-  RESPOND : isolation playbook; disable creds; comms
-  RECOVER : immutable offsite backups; restore tests; staged recovery</code></pre>
+      <details class="small" open>
+        <summary><strong>Final Report – Proposal for Implementing Secure OSS</strong></summary>
+        <p class="small">Full client-facing proposal for a grocery store OSS, including:</p>
+        <ul class="compact small">
+          <li>Business context and objectives:contentReference[oaicite:5]{index=5}</li>
+          <li>Threat landscape (data breaches, phishing, malware, DoS, SQLi):contentReference[oaicite:6]{index=6}</li>
+          <li>UML diagrams – abuse case, sequence, class:contentReference[oaicite:7]{index=7}</li>
+          <li>Threat modelling with STRIDE & DREAD:contentReference[oaicite:8]{index=8}</li>
+          <li>Security controls – encryption, MFA, RBAC, audit, training:contentReference[oaicite:9]{index=9}</li>
+          <li>Implementation plan from requirements to monitoring:contentReference[oaicite:10]{index=10}</li>
+        </ul>
       </details>
 
-      <details class="small"><summary><strong>Secure coding evidence (snippets)</strong></summary>
-        <p class="small"><em>Password hashing (Argon2id)</em></p>
-        <pre><code>from argon2 import PasswordHasher
-ph = PasswordHasher()
-h = ph.hash(password)      # store hash
-ph.verify(h, candidate)    # constant-time verify</code></pre>
+      <details class="small">
+        <summary><strong>Initial Forum Post – Secure Software Development Practices</strong></summary>
+        <p class="small">
+          Analysed the value of Threat Modelling (STRIDE) and Code Review in secure development. 
+          Advocated integrating these practices early to reduce cost and increase resilience:contentReference[oaicite:11]{index=11}.
+        </p>
+      </details>
 
-        <p class="small"><em>Parameterised SQL (avoid injection)</em></p>
-        <pre><code>cur.execute("INSERT INTO users(email, hash) VALUES(?, ?)", (email, h))</code></pre>
+      <details class="small">
+        <summary><strong>Programming Work Outline – Security Design Implementation</strong></summary>
+        <p class="small">
+          Defined threats (breaches, phishing, malware, DoS, SQLi) and selected secure libraries:
+          BCrypt, JWT, Helmet, Validator, Express-Rate-Limit, Mongoose:contentReference[oaicite:12]{index=12}.
+        </p>
+        <pre><code>// Example: Secure password storage
+const bcrypt = require('bcrypt');
+const hashPassword = async (pwd) => {
+  const salt = await bcrypt.genSalt(12);
+  return bcrypt.hash(pwd, salt);
+};
+</code></pre>
+        <p class="small">Testing plan covered unit (Mocha/Chai), integration (Jest), pen testing (ZAP/Burp), load (JMeter), and UAT:contentReference[oaicite:13]{index=13}.</p>
+      </details>
 
-        <p class="small"><em>AES-256 at rest (random IV; CBC + padding)</em></p>
-        <pre><code>from Crypto.Cipher import AES
-from Crypto.Random import get_random_bytes
-from Crypto.Util.Padding import pad, unpad
-def encrypt(key, data):
-    iv = get_random_bytes(16)
-    c = AES.new(key, AES.MODE_CBC, iv)
-    return iv + c.encrypt(pad(data, 16))</code></pre>
-
-        <p class="small"><em>Defence against privilege injection (test)</em></p>
-        <pre><code>def test_checkout_rejects_unexpected_fields(client):
-    r = client.post("/checkout", json={"total": 10, "role": "admin"})
-    assert r.status_code == 400</code></pre>
+      <details class="small">
+        <summary><strong>Peer Discussion Summary Post</strong></summary>
+        <p class="small">
+          Reflected on Amazon case study and peer input on frameworks (NIST CSF, ISO/IEC 27001), economic/legal 
+          implications, and embedding security in culture:contentReference[oaicite:14]{index=14}.
+        </p>
       </details>
     </div>
 
     <div class="section"><h2>Supporting Artefacts</h2>
       <ul class="compact small">
-        <li>Framework cross-walk (NIST CSF ↔ ISO/IEC 27001 ↔ CIS Controls)</li>
-        <li>PDP/skills matrix aligned to SFIA/NICE</li>
+        <li>UML diagrams (Abuse, Sequence, Class)</li>
+        <li>Threat modelling tables (STRIDE, DREAD)</li>
+        <li>Secure coding snippets (Node.js, Python):contentReference[oaicite:15]{index=15}</li>
+        <li>Test plan and tool configurations</li>
       </ul>
     </div>
 
     <div class="section"><h2>Reflection</h2>
-      <p class="small">Shifted from tool-first to risk-first thinking. Controls create value when justified against asset exposure, legal obligations and measurable effectiveness.</p>
+      <p class="small">
+        This project reinforced the importance of integrating threat modelling, secure design, and 
+        layered testing from the outset. The OSS proposal served as a realistic business scenario 
+        where technical, organisational, and legal requirements had to be met. The combination of 
+        UML and STRIDE/DREAD improved the clarity of design decisions, while hands-on coding and 
+        security library integration built practical skills.
+      </p>
     </div>
 
     <div class="section"><h2>Milestones</h2>
       <ul class="compact small">
-        <li>Clarify context and objectives</li>
-        <li>Map frameworks for reuse</li>
-        <li>Draft PDP focus areas</li>
-        <li>Write position paper and peer-review</li>
-        <li>Iteratively expand glossary</li>
+        <li>Week 1–2: Client scenario analysis, objectives definition</li>
+        <li>Week 3: Threat modelling & UML diagrams</li>
+        <li>Week 4–5: Programming outline, library selection</li>
+        <li>Week 6: Draft proposal for formative feedback</li>
+        <li>Week 7: Final report & test plan</li>
       </ul>
     </div>
 
     <div class="section"><h2>Skills Developed</h2>
       <ul class="compact small">
-        <li>Risk vocabulary and trade-offs</li><li>Standards mapping</li><li>Critical reading</li><li>Structured note-taking</li>
+        <li>Client needs analysis in a cybersecurity context</li>
+        <li>Threat modelling with STRIDE & DREAD</li>
+        <li>UML for security-focused design</li>
+        <li>Secure coding with Node.js & Python</li>
+        <li>Security testing with Mocha, Jest, ZAP, Burp, JMeter</li>
       </ul>
     </div>
 
     <div class="section"><h2>References</h2>
       <p class="small">
-        ISO (2022) <em>ISO/IEC 27001:2022 Information security, cybersecurity and privacy protection—ISMS</em>. ISO.<br>
-        NIST (2018) <em>Framework for Improving Critical Infrastructure Cybersecurity</em>, v1.1. NIST.<br>
-        Biryukov, D. et&nbsp;al. (2021) ‘Argon2 Memory-Hard Functions’, <em>RFC 9106</em>. IETF.<br>
-        NIST (2001) <em>FIPS 197: Advanced Encryption Standard (AES)</em>. NIST.
+        Anderson, R. (2008) <em>Security Engineering</em>, 3rd ed. Wiley &amp; Sons.<br>
+        Howard, M. &amp; LeBlanc, D. (2003) <em>Writing Secure Code</em>, 2nd ed. Microsoft Press.<br>
+        Shostack, A. (2014) <em>Threat Modeling: Designing for Security</em>. Wiley.<br>
+        McGraw, G. (2006) <em>Software Security: Building Security In</em>. Addison-Wesley.<br>
+        Connolly, T. &amp; Begg, C. (2005) <em>Database Systems</em>, 5th ed. Pearson/Addison Wesley.<br>
+        Severance, C. (2016) <em>Python for Everybody</em>. CreateSpace.
       </p>
     </div>
 
@@ -108,5 +134,6 @@ def encrypt(key, data):
     </div>
 
   </div>
+
   <div class="footer">© 2025–2026 mc24887 | MSc Cyber Security</div>
 </body></html>
