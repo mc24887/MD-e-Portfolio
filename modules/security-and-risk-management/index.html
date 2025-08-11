@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Security and Risk Management – e-Portfolio</title>
+<title>Security and Risk Management – e‑Portfolio</title>
 <link rel="stylesheet" href="../../assets/style.css">
 </head><body>
   <div class="header">
@@ -10,76 +10,92 @@
       <div class="small">Security and Risk Management <span class="badge done">Completed</span></div>
     </div>
   </div>
-  <div class="container page">
 
+  <div class="container page">
     <div class="section"><h2>Module Overview</h2>
-      <p class="small">Produced a defensible risk register, scenario analysis and BC/DR pack. Prioritisation balanced exploitability and business impact with outputs suited to both technical and executive audiences.</p>
+      <p class="small">Applied risk identification, threat modelling and disaster recovery planning. Integrated seminar outputs and an executive summary with treatment decisions prioritised by business objectives.</p>
     </div>
 
     <div class="section"><h2>Key Submissions</h2>
       <ul class="compact small">
-        <li><strong>Risk register &amp; treatment plan</strong> — Likelihood/impact scoring with rationale; mapped to owners, objectives and verification steps.</li>
-        <li><strong>Threat scenarios (ADTree)</strong> — Credential stuffing → lateral movement → exfiltration; layered mitigations across prevent/detect/respond.</li>
-        <li><strong>BC/DR highlights</strong> — RTO/RPO per service; warm standby for Tier-1 workloads; recovery sequencing and clear comms flow.</li>
+        <li><strong>Risk Identification Report (PamperedPets)</strong> — assets, risk criteria, likelihood/impact scoring, prioritised treatment plan.</li>
+        <li><strong>Threat Modelling (bank case)</strong> — STRIDE scenarios; mitigations and monitoring; concise board narrative.</li>
+        <li><strong>Executive Summary & DR plan</strong> — RTO/RPO, comms plan, run‑books, test schedule for exercises.</li>
       </ul>
-
-      <details class="small"><summary><strong>Scanner linkage to risk</strong></summary>
-        <pre><code># OWASP ZAP baseline
-zap-baseline.py -t https://app.example.com -r zap-report.html --auto
-# OpenVAS highlights → join to risk register entries
-High: TLSv1.0 on 443  → "Legacy TLS allows downgrade/mitM" → Treatment: TLS≥1.2, HSTS</code></pre>
-      </details>
     </div>
 
     <div class="section"><h2>Supporting Artefacts</h2>
       <ul class="compact small">
-        <li>Seminar DR plan &amp; executive summary</li>
-        <li>Risk identification report and heat-map</li>
-        <li>Tabletop outcomes and follow-up actions</li>
+        <li>Seminar notes & slides</li>
+        <li>Reflective portfolio linking risks to controls and outcomes</li>
+        <li>Peer‑evaluation highlights</li>
       </ul>
     </div>
 
     <div class="section"><h2>Reflection</h2>
-      <p class="small">Focusing on credible exploit paths (not generic CVSS alone) improved prioritisation and accelerated funding for the most impactful controls.</p>
+      <p class="small">Turning findings into <em>decisions</em> (now/later/never) created the most value. Clear visuals + short narratives improved stakeholder alignment and rehearsal quality.</p>
     </div>
 
     <div class="section"><h2>Milestones</h2>
       <ul class="compact small">
-        <li>Asset/impact definition and risk workshop</li>
-        <li>Register + heat-map; scenario modelling</li>
-        <li>Executive summary and control roadmap</li>
-        <li>BC/DR plan and tabletop drill</li>
-        <li>Update register; track residual risk</li>
+        <li>Asset & process inventory; risk criteria</li>
+        <li>Identify & score top risks; record assumptions</li>
+        <li>Define response / DR strategy and test cadence</li>
+        <li>Executive communication; rehearsal</li>
       </ul>
     </div>
 
     <div class="section"><h2>Skills Developed</h2>
-      <ul class="compact small"><li>Risk assessment and treatment</li><li>Scenario analysis</li><li>Scanner triage</li><li>Incident/DR planning</li></ul>
+      <ul class="compact small">
+        <li>Risk assessment & treatment</li>
+        <li>Threat modelling</li>
+        <li>Incident readiness & DR planning</li>
+        <li>Executive communication</li>
+      </ul>
     </div>
 
-    <div class="section"><h2>References</h2>
-      <p class="small">
-        ISO (2018) <em>ISO 31000:2018 Risk Management—Guidelines</em>. ISO.<br>
-        NIST (2012) <em>SP 800-30 Rev.1: Guide for Conducting Risk Assessments</em>. NIST.<br>
-        ISO (2019) <em>ISO 22301:2019 Security and resilience—Business continuity</em>. ISO.<br>
-        OWASP (2024) <em>OWASP ZAP Project</em>. OWASP.<br>
-        Greenbone (2024) <em>OpenVAS / GVM Documentation</em>. Greenbone Networks.
-      </p>
+    <div class="section">
+      <h2>Evidence (selected)</h2>
+      <details class="small" open>
+        <summary><strong>Risk register excerpts</strong></summary>
+        <ul class="compact small">
+          <li>Credential compromise → enforce MFA, privileged access reviews, detection rules</li>
+          <li>Ransomware risk → 3‑2‑1 backups, immutable store, restore drills</li>
+        </ul>
+      </details>
+      <details class="small">
+        <summary><strong>DR run‑book snapshot</strong></summary>
+        <ul class="compact small">
+          <li>Escalation tree; comms templates; RTO/RPO targets</li>
+          <li>Table‑top and live‑fire exercise schedule</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="section">
+      <h2>Findings & Actions</h2>
+      <table class="small" style="width:100%">
+        <thead><tr><th>Finding</th><th>Action</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>Unclear risk ownership</td><td>RACI + risk owners in register</td><td>Accountability improved</td></tr>
+          <tr><td>Backup plan untested</td><td>Quarterly restore drills</td><td>Confidence ↑; RTO met</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="section">
       <h2>Feedback</h2>
-      <p class="small">Constructive feedback is welcome. Use the form or raise a GitHub issue.</p>
+      <p class="small">Constructive feedback on clarity, depth and evidence is welcome. Use the form or raise a GitHub issue.</p>
       <form action="mailto:mc24887@essex.ac.uk" method="post" enctype="text/plain" class="small">
         <label>Name<br><input type="text" name="name" required></label><br><br>
         <label>Email<br><input type="email" name="email" required></label><br><br>
         <label>Feedback<br><textarea name="message" rows="4" required></textarea></label><br><br>
         <button type="submit">Send feedback</button>
-        <a class="small" style="margin-left:10px" href="https://github.com/mc24887/MD-e-Portfolio/issues/new" target="_blank">Suggest via GitHub Issue</a>
+        <a class="small" style="margin-left:10px" target="_blank" href="https://github.com/mc24887/MD-e-Portfolio/issues/new">Suggest via GitHub Issue</a>
       </form>
       <p class="small">Alternatively, email: <kbd>mc24887@essex.ac.uk</kbd></p>
     </div>
-
   </div>
+
   <div class="footer">© 2025–2026 mc24887 | MSc Cyber Security</div>
 </body></html>
