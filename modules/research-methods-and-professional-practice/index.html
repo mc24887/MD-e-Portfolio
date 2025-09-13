@@ -101,43 +101,180 @@
       </details>
       <!-- END Unit 5 additions -->
 
-      <!-- NEW: Unit 6–8 activities (added for outstanding submission) -->
-      <details class="small" open>
-        <summary><strong>Unit 6 – Summary Measures (Descriptive Statistics)</strong></summary>
-        <ul class="compact small">
-          <li><strong>Location & spread:</strong> Example – Diet&nbsp;A mean = 5.34kg vs Diet&nbsp;B mean = 3.71kg; Diet&nbsp;A showed lower variability (s = 2.54) and narrower IQR.</li>
-          <li><strong>Frequencies:</strong> Brand analysis indicated dominance of Brand&nbsp;A; useful for later inferential testing.</li>
-        </ul>
-        <p class="small">
-          <strong>Interpretation:</strong> Descriptive statistics provided a reliable base to check assumptions (outliers, normality) and justify subsequent hypothesis tests.
-        </p>
-      </details>
+      <!-- ===================== UNIT 6–8: EVIDENCE-RICH ENTRIES (DROP-IN) ===================== -->
 
-      <details class="small" open>
-        <summary><strong>Unit 7 – Hypothesis Testing (Inferential Statistics)</strong></summary>
-        <ul class="compact small">
-          <li><strong>Paired <em>t</em>-test:</strong> Design&nbsp;1 vs Design&nbsp;2 – significant difference (e.g., t = 2.875, p = 0.018) → evidence Design&nbsp;1 performs better at 5% level.</li>
-          <li><strong>Independent <em>t</em>-test:</strong> Diet&nbsp;A vs Diet&nbsp;B – significant difference (e.g., p = 0.0028) with Diet&nbsp;A more effective and more consistent.</li>
-          <li><strong>Assumptions:</strong> Normality of differences and (where relevant) equality of variances were examined before interpreting results.</li>
-        </ul>
-        <p class="small">
-          <strong>Interpretation:</strong> I learned to frame clear hypotheses, interpret p-values with effect sizes, and distinguish statistical from practical significance.
-        </p>
-      </details>
+<!-- Unit 6 -->
+<div class="section"><h2>Unit 6 – Summary Measures (Descriptive Statistics)</h2>
+  <p class="small">
+    I used descriptive statistics to summarise datasets and diagnose assumptions ahead of inference. Measures of location (mean/median)
+    and spread (SD/IQR) revealed both effectiveness and consistency across groups.
+  </p>
 
-      <details class="small" open>
-        <summary><strong>Unit 8 – Data Analysis &amp; Visualisation</strong></summary>
-        <ul class="compact small">
-          <li><strong>Visuals:</strong> Histograms, boxplots and bar charts clarified distributions, outliers and IQR; scatterplots highlighted relationships.</li>
-          <li><strong>Integration:</strong> Charts were used to present and validate results from Units 6–7 (e.g., visualising narrower spread for Diet&nbsp;A).</li>
-          <li><strong>Ethics:</strong> Reflected on responsible visualisation to avoid misleading scales or selective presentation.</li>
-        </ul>
-        <p class="small">
-          <strong>Interpretation:</strong> Visualisation improved transparency and comprehension, supporting evidence-based conclusions for both technical and non-technical audiences.
-        </p>
-      </details>
-      <!-- END Unit 6–8 additions -->
+  <details class="small" open>
+    <summary><strong>Evidence & Results</strong></summary>
+    <p class="small"><strong>Summary table</strong> (illustrative extract from worksheet):</p>
+    <table class="small" style="width:100%">
+      <thead><tr>
+        <th>Group</th><th>n</th><th>Mean</th><th>Median</th><th>SD</th><th>Q1</th><th>Q3</th><th>IQR</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Diet A</td><td>n<sub>A</sub></td><td>5.34</td><td>[insert]</td><td>2.54</td><td>[insert]</td><td>[insert]</td><td>[insert]</td></tr>
+        <tr><td>Diet B</td><td>n<sub>B</sub></td><td>3.71</td><td>[insert]</td><td>2.87</td><td>[insert]</td><td>[insert]</td><td>[insert]</td></tr>
+      </tbody>
+    </table>
+    <p class="small">
+      <strong>Interpretation:</strong> Diet A shows a higher mean and lower SD with a narrower IQR, indicating better average performance and more consistent outcomes.
+    </p>
 
+    <p class="small"><strong>Brand frequency</strong> (extract):</p>
+    <table class="small" style="width:100%">
+      <thead><tr><th>Brand</th><th>Count</th><th>Percent</th></tr></thead>
+      <tbody>
+        <tr><td>Brand A</td><td>[insert]</td><td>[insert]%</td></tr>
+        <tr><td>Brand B</td><td>[insert]</td><td>[insert]%</td></tr>
+        <tr><td>Brand C</td><td>[insert]</td><td>[insert]%</td></tr>
+      </tbody>
+    </table>
+
+    <p class="small"><strong>Worksheet (PDF):</strong>
+      <a href="../../evidence/Unit6_SummaryMeasures.pdf" target="_blank">Unit 6 – Summary Measures Worksheet</a>
+    </p>
+
+    <p class="small"><strong>Charts/images:</strong></p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <figure style="max-width:320px">
+        <img src="../../evidence/Unit6_Histogram.png" alt="Unit 6 histogram of group values" style="max-width:100%;border-radius:6px">
+        <figcaption class="tiny">Histogram – distribution check (normality/outliers).</figcaption>
+      </figure>
+      <figure style="max-width:320px">
+        <img src="../../evidence/Unit6_Boxplot.png" alt="Unit 6 boxplot comparing groups" style="max-width:100%;border-radius:6px">
+        <figcaption class="tiny">Boxplot – spread & IQR comparison (Diet A vs Diet B).</figcaption>
+      </figure>
+    </div>
+  </details>
+
+  <details class="small">
+    <summary><strong>Reflection</strong></summary>
+    <p class="small">
+      Descriptive statistics provided a defensible baseline for later tests. Checking medians vs means (outlier sensitivity),
+      and assessing spread (SD/IQR), reduced the risk of misinterpretation and supported assumption checks.
+    </p>
+  </details>
+</div>
+
+<!-- Unit 7 -->
+<div class="section"><h2>Unit 7 – Hypothesis Testing (Inferential Statistics)</h2>
+  <p class="small">
+    I applied paired and independent <em>t</em>-tests to evaluate whether group differences were statistically significant,
+    framing clear null and alternative hypotheses and checking assumptions before interpreting results.
+  </p>
+
+  <details class="small" open>
+    <summary><strong>Evidence & Results</strong></summary>
+    <p class="small"><strong>Paired samples t-test</strong> (Design 1 vs Design 2):</p>
+    <table class="small" style="width:100%">
+      <thead><tr>
+        <th>Comparison</th><th>Mean diff</th><th>t</th><th>df</th><th>p-value</th><th>Decision (α=0.05)</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Design 1 − Design 2</td><td>[insert]</td><td>2.875</td><td>[insert]</td><td>0.018</td><td>Reject H<sub>0</sub> (significant)</td></tr>
+      </tbody>
+    </table>
+    <p class="small"><strong>Interpretation:</strong> Evidence that Design 1 outperforms Design 2 at the 5% level.</p>
+
+    <p class="small"><strong>Independent samples t-test</strong> (Diet A vs Diet B):</p>
+    <table class="small" style="width:100%">
+      <thead><tr>
+        <th>Group</th><th>n</th><th>Mean</th><th>SD</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Diet A</td><td>n<sub>A</sub></td><td>5.34</td><td>2.54</td></tr>
+        <tr><td>Diet B</td><td>n<sub>B</sub></td><td>3.71</td><td>2.87</td></tr>
+      </tbody>
+    </table>
+    <p class="small">Test result: p = 0.0028 → significant difference; Diet A more effective and more consistent.</p>
+
+    <p class="small"><strong>Assumptions checked:</strong> normality of differences (paired test) and equality of variances (independent test) before inference.</p>
+
+    <p class="small"><strong>Worksheet (PDF):</strong>
+      <a href="../../evidence/Unit7_HypothesisTesting.pdf" target="_blank">Unit 7 – Hypothesis Testing Worksheet</a>
+    </p>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <figure style="max-width:320px">
+        <img src="../../evidence/Unit7_Paired_Boxplot.png" alt="Paired comparison boxplot for Design 1 vs Design 2" style="max-width:100%;border-radius:6px">
+        <figcaption class="tiny">Paired comparison visual (Design 1 vs Design 2).</figcaption>
+      </figure>
+      <figure style="max-width:320px">
+        <img src="../../evidence/Unit7_Group_Boxplot.png" alt="Independent groups boxplot for Diet A vs Diet B" style="max-width:100%;border-radius:6px">
+        <figcaption class="tiny">Group comparison visual (Diet A vs Diet B).</figcaption>
+      </figure>
+    </div>
+  </details>
+
+  <details class="small">
+    <summary><strong>Reflection</strong></summary>
+    <p class="small">
+      I learned to interpret p-values with effect sizes and to separate statistical from practical significance. Assumption checking
+      (normality, equal variances) reduced the risk of Type I/II errors and strengthened the credibility of decisions.
+    </p>
+  </details>
+</div>
+
+<!-- Unit 8 -->
+<div class="section"><h2>Unit 8 – Data Analysis &amp; Visualisation</h2>
+  <p class="small">
+    I used visual analytics to present and validate results from Units 6–7. Charts highlighted patterns not obvious in tables,
+    improved transparency, and supported communication to technical and non-technical audiences.
+  </p>
+
+  <details class="small" open>
+    <summary><strong>Evidence & Outputs</strong></summary>
+    <ul class="compact small">
+      <li><strong>Histograms</strong> to check distributional shape and potential outliers.</li>
+      <li><strong>Boxplots</strong> to compare spread/IQR (e.g., narrower for Diet A).</li>
+      <li><strong>Scatterplots</strong> to inspect relationships between variables.</li>
+    </ul>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <figure style="max-width:320px">
+        <img src="../../evidence/Unit8_Histograms.png" alt="Unit 8 histograms" style="max-width:100%;border-radius:6px">
+        <figcaption class="tiny">Distributions and normality cues.</figcaption>
+      </figure>
+      <figure style="max-width:320px">
+        <img src="../../evidence/Unit8_Boxplots.png" alt="Unit 8 boxplots" style="max-width:100%;border-radius:6px">
+        <figcaption class="tiny">Group spread and IQR comparison.</figcaption>
+      </figure>
+      <figure style="max-width:320px">
+        <img src="../../evidence/Unit8_Scatter.png" alt="Unit 8 scatterplots" style="max-width:100%;border-radius:6px">
+        <figcaption class="tiny">Relationships and potential correlations.</figcaption>
+      </figure>
+    </div>
+    <p class="small"><strong>Workbook extracts:</strong>
+      <a href="../../evidence/Unit8_Charts_Workbook.pdf" target="_blank">Unit 8 – Charts & Visuals (PDF)</a>
+    </p>
+  </details>
+
+  <details class="small">
+    <summary><strong>Reflection</strong></summary>
+    <p class="small">
+      Visualisation is an ethical responsibility: poor scaling or selective display can mislead. I ensured consistent axes, accurate labels,
+      and inclusion of both central tendency and dispersion, making the analysis transparent and reproducible.
+    </p>
+  </details>
+</div>
+
+<!-- Unit 7–8: Compulsory worksheet note -->
+<div class="section"><h2>Unit 7–8: Hypothesis Testing &amp; Summary Measures Worksheets</h2>
+  <p class="small">
+    The completed worksheets form a compulsory e-Portfolio component and are included in the final submission:
+    <a href="../../evidence/Unit6_SummaryMeasures.pdf" target="_blank">Unit 6 – Summary Measures (PDF)</a> |
+    <a href="../../evidence/Unit7_HypothesisTesting.pdf" target="_blank">Unit 7 – Hypothesis Testing (PDF)</a>.
+    Interpretations are embedded above, linked to the learning outcomes on inferential statistics and appropriate testing.
+  </p>
+</div>
+
+<!-- ===================== END UNIT 6–8 BLOCK ===================== -->
+      
       <!-- Existing later activities (kept) -->
       <details class="small">
         <summary><strong>Unit 7–8: Hypothesis Testing &amp; Summary Measures Worksheets</strong></summary>
